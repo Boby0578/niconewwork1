@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mic, Lightbulb, BookOpen } from 'lucide-react';
-import { verbs, pronouns, tenses, getTensePreposition, getPronounText, Verb, Tense, Pronoun } from '@/data/verbs';
+import { Card, CardContent } from '@/components/ui/card';
+import { Mic, Volume2, X, Pencil } from 'lucide-react';
+import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
+import { cn } from '@/lib/utils';
+import ConjugationTable from '@/components/ConjugationTable';
 
 interface Question {
   verb: Verb;
@@ -12,95 +14,96 @@ interface Question {
 }
 
 const Game = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { level, time, name } = location.state || { level: 1, time: 0, name: 'Joueur' };
+
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
-  const [userAnswer, setUserAnswer] = useState('');
-  const [feedback, setFeedback] = useState('');
-  const [showAnswer, setShowAnswer] = useState(false);
+  const [isListening, setIsListening] = useState(false);
+  const [showConjugation, setShowConjugation] = useState(false);
 
   const generateQuestion = () => {
+    setShowConjugation(false);
     const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
     const availableTenses = Object.keys(randomVerb.conjugations) as Tense[];
     const randomTense = availableTenses[Math.floor(Math.random() * availableTenses.length)];
     const randomPronoun = pronouns[Math.floor(Math.random() * pronouns.length)];
     
     setCurrentQuestion({ verb: randomVerb, tense: randomTense, pronoun: randomPronoun });
-    setUserAnswer('');
-    setFeedback('');
-    setShowAnswer(false);
   };
 
   useEffect(() => {
     generateQuestion();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!currentQuestion) return;
-
-    const correctAnswer = currentQuestion.verb.conjugations[currentQuestion.tense]?.[currentQuestion.pronoun];
-    
-    // Simple check, will need to be smarter for il/elle, etc.
-    if (userAnswer.trim().toLowerCase() === correctAnswer?.toLowerCase()) {
-      setScore(score + 5);
-      setFeedback('Bonne réponse !');
-      setTimeout(generateQuestion, 1500);
-    } else {
-      setScore(score - 5);
-      setFeedback('Mauvaise réponse.');
-    }
-  };
-
   if (!currentQuestion) {
-    return <div>Chargement...</div>;
+    return <div className="min-h-screen flex items-center justify-center">Chargement...</div>;
   }
 
-  const correctAnswer = currentQuestion.verb.conjugations[currentQuestion.tense]?.[currentQuestion.pronoun];
+  const { verb, tense, pronoun } = currentQuestion;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-200 flex items-center justify-center p-4">
-      <Card className="w-full max-w-2xl shadow-2xl">
-        <CardHeader className="flex flex-row items-center justify-between">
-          <CardTitle className="text-2xl font-bold text-gray-700">Maître de la Conjugaison</CardTitle>
-          <div className="text-2xl font-bold text-violet-600">Score: {score}</div>
-        </CardHeader>
-        <CardContent>
-          <div className="text-center my-8">
-            <p className="text-xl md:text-2xl text-gray-800">
-              Conjugue le verbe <span className="font-bold text-red-600">{currentQuestion.verb.name}</span> {getTensePreposition(currentQuestion.tense)}<span className="font-bold text-purple-600">{currentQuestion.tense}</span>
-            </p>
-            <p className="text-lg md:text-xl text-gray-600 mt-2">
-                ({getPronounText(currentQuestion.pronoun)})
-            </p>
-          </div>
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 text-gray-700">
+        <div className="w-full max-w-4xl mx-auto">
+            <Card className="w-full bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 md:p-8">
+                <CardContent className="p-0">
+                    <div className="flex justify-between items-start mb-8">
+                        <Button variant="destructive" size="sm" onClick={() => navigate('/')}>
+                            <X className="mr-1 h-4 w-4" /> Quitter
+                        </Button>
+                        <div className="text-center text-2xl font-bold text-gray-600">Score: {score}</div>
+                        <div className="w-24 text-right">
+                           {/* Timer placeholder */}
+                        </div>
+                    </div>
 
-          <form onSubmit={handleSubmit} className="flex items-center gap-2 mb-4">
-            <Input
-              type="text"
-              value={userAnswer}
-              onChange={(e) => setUserAnswer(e.target.value)}
-              placeholder="Votre réponse..."
-              className="flex-grow text-lg"
-            />
-            <Button type="submit" className="bg-green-500 hover:bg-green-600 active:bg-green-700">Vérifier</Button>
-            <Button type="button" size="icon" variant="outline" className="bg-blue-100 hover:bg-blue-200 active:bg-blue-300">
-              <Mic className="h-5 w-5 text-blue-600" />
-            </Button>
-          </form>
+                    <div className="text-center my-8 min-h-[100px] flex items-center justify-center">
+                        <p className="text-2xl md:text-4xl font-bold leading-tight">
+                            Conjugue le verbe <span className="text-green-600">{verb.name}</span> {getTensePreposition(tense)}<span className="text-purple-600">{tense}</span>, à la <span className="text-indigo-600">{getPronounText(pronoun)}</span> {getPronounHint(pronoun)}
+                        </p>
+                    </div>
 
-          {feedback && <p className="text-center font-semibold my-2">{feedback}</p>}
-          {showAnswer && <p className="text-center font-bold text-green-600 my-2">Réponse : {correctAnswer}</p>}
+                    <div className="relative flex justify-center items-center my-12">
+                        <div className="absolute left-0">
+                            <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">
+                                <Volume2 className="h-7 w-7 text-gray-600" />
+                            </Button>
+                        </div>
+                        <div className="text-center">
+                            <Button 
+                                size="icon" 
+                                className={cn(
+                                    "rounded-full h-28 w-28 shadow-lg transition-all duration-300",
+                                    isListening 
+                                    ? "bg-gradient-to-br from-red-500 to-red-600 scale-110"
+                                    : "bg-gradient-to-br from-yellow-400 to-orange-500"
+                                )}
+                                onClick={() => setIsListening(!isListening)}
+                            >
+                                <Mic className="h-12 w-12 text-white" />
+                            </Button>
+                            <p className="mt-4 text-lg">{isListening ? "..." : "Appuyez pour parler"}</p>
+                        </div>
+                        <div className="absolute right-0">
+                            <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">
+                                <Pencil className="h-7 w-7 text-gray-600" />
+                            </Button>
+                        </div>
+                    </div>
 
-          <div className="flex justify-center gap-4 mt-6">
-            <Button variant="outline" onClick={() => setShowAnswer(!showAnswer)} className="active:bg-yellow-200">
-              <Lightbulb className="mr-2 h-4 w-4" /> Révéler la réponse
-            </Button>
-            <Button variant="outline" className="active:bg-indigo-200">
-              <BookOpen className="mr-2 h-4 w-4" /> Tableau de conjugaison
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+                    <div className="flex justify-center flex-wrap gap-4 mt-12">
+                        <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full px-6">Révéler la réponse</Button>
+                        <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full px-6" onClick={generateQuestion}>Question suivante</Button>
+                        <Button className="bg-purple-500 hover:bg-purple-600 text-white rounded-full px-6" onClick={() => setShowConjugation(!showConjugation)}>
+                            {showConjugation ? "Cacher" : "Voir"} la conjugaison
+                        </Button>
+                    </div>
+
+                    {showConjugation && <ConjugationTable verb={verb} />}
+                </CardContent>
+            </Card>
+        </div>
     </div>
   );
 };

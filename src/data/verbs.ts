@@ -57,12 +57,24 @@ export const getTensePreposition = (tense: Tense) => {
 
 export const getPronounText = (pronoun: Pronoun) => {
     const mapping = {
-        "je": "à la première personne du singulier (je)",
-        "tu": "à la deuxième personne du singulier (tu)",
-        "il/elle": "à la troisième personne du singulier (il/elle)",
-        "nous": "à la première personne du pluriel (nous)",
-        "vous": "à la deuxième personne du pluriel (vous)",
-        "ils/elles": "à la troisième personne du pluriel (ils/elles)",
+        "je": "première personne du singulier",
+        "tu": "deuxième personne du singulier",
+        "il/elle": "troisième personne du singulier",
+        "nous": "première personne du pluriel",
+        "vous": "deuxième personne du pluriel",
+        "ils/elles": "troisième personne du pluriel",
+    };
+    return mapping[pronoun];
+}
+
+export const getPronounHint = (pronoun: Pronoun) => {
+    const mapping = {
+        "je": "(je)",
+        "tu": "(tu)",
+        "il/elle": "(il/elle)",
+        "nous": "(nous)",
+        "vous": "(vous)",
+        "ils/elles": "(ils/elles)",
     };
     return mapping[pronoun];
 }

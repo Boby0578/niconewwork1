@@ -48,6 +48,9 @@ const Index = () => {
     const newMuteState = !isMuted;
     setIsMuted(newMuteState);
     localStorage.setItem('conjugaison-mute', String(newMuteState));
+    if (newMuteState) {
+      window.speechSynthesis.cancel();
+    }
   };
 
   return (

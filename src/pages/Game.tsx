@@ -52,11 +52,15 @@ const Game = () => {
     const newMuteState = !isMuted;
     setIsMuted(newMuteState);
     localStorage.setItem('conjugaison-mute', String(newMuteState));
-    if (!newMuteState && currentQuestion) {
+
+    if (newMuteState) {
+        window.speechSynthesis.cancel();
+    } else if (currentQuestion) {
       // If unmuting, speak the current question again
       const { verb, tense, pronoun } = currentQuestion;
       const questionText = `Conjugue le verbe ${verb.name} ${getTensePreposition(tense)}${tense}, à la ${getPronounText(pronoun)}.`;
-      speak(questionText);
+      // Use a small delay to prevent race conditions with cancel()
+      setTimeout(() => speak(questionText), 100);
     }
   };
 

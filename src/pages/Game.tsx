@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mic, Volume2, X, Pencil } from 'lucide-react';
+import { Volume2, X, Pencil } from 'lucide-react';
 import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
@@ -20,7 +20,6 @@ const Game = () => {
 
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
-  const [isListening, setIsListening] = useState(false);
   const [showConjugation, setShowConjugation] = useState(false);
 
   const generateQuestion = () => {
@@ -64,27 +63,13 @@ const Game = () => {
                         </p>
                     </div>
 
-                    <div className="relative flex justify-center items-center my-24">
+                    <div className="relative flex justify-center items-center my-24 h-40">
                         <div className="absolute left-0">
                             <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">
                                 <Volume2 className="h-7 w-7 text-gray-600" />
                             </Button>
                         </div>
-                        <div className="text-center">
-                            <Button 
-                                size="icon" 
-                                className={cn(
-                                    "rounded-full h-40 w-40 shadow-lg transition-all duration-300 flex items-center justify-center",
-                                    isListening 
-                                    ? "bg-gradient-to-br from-red-500 to-red-600 scale-110"
-                                    : "bg-gradient-to-br from-yellow-400 to-orange-500"
-                                )}
-                                onClick={() => setIsListening(!isListening)}
-                            >
-                                <Mic className="h-32 w-32 text-white" />
-                            </Button>
-                            <p className="mt-4 text-lg">{isListening ? "..." : "Appuyez pour parler"}</p>
-                        </div>
+                        
                         <div className="absolute right-0">
                             <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">
                                 <Pencil className="h-7 w-7 text-gray-600" />

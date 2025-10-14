@@ -63,10 +63,5 @@ export const getPronounText = (pronoun: Pronoun) => {
 };
 
 export const getPronounHint = (pronoun: Pronoun) => {
-  if (pronoun === 'il/elle' || pronoun === 'ils/elles') {
-    return `(${pronoun})`;
-  }
-  const text = getPronounText(pronoun);
-  const firstWord = text.split(' ')[0];
-  return `(${firstWord.charAt(0)}ère pers. ${text.includes('singulier') ? 'sing.' : 'plur.'})`;
+  return `(${pronoun})`;
 };

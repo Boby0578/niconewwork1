@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { X } from 'lucide-react';
+import { X, Mic } from 'lucide-react';
 import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
-import NewMicrophoneIcon from '@/components/icons/NewMicrophoneIcon';
 
 interface Question {
   verb: Verb;
@@ -69,7 +68,7 @@ const Game = () => {
                             size="icon"
                             className="h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-orange-500 hover:bg-orange-600 shadow-lg transition-all duration-300"
                         >
-                            <NewMicrophoneIcon className="h-24 w-24 sm:h-32 sm:w-32 text-white" />
+                            <Mic className="h-24 w-24 sm:h-32 sm:w-32 text-white" />
                         </Button>
                         <p className="mt-4 text-xl font-semibold text-gray-600">
                             Appuyez pour parler

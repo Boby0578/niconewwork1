@@ -18,7 +18,7 @@ interface Question {
 const Game = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { level, time, name, isMobileView } = location.state || { level: 1, time: 0, name: 'Joueur', isMobileView: false };
+  const { level, time, name } = location.state || { level: 1, time: 0, name: 'Joueur' };
 
   const [verbs, setVerbs] = useState<Verb[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -110,7 +110,7 @@ const Game = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-stretch p-4 sm:p-6 text-gray-700">
-        <div className={cn("w-full flex-grow flex flex-col mx-auto transition-all duration-300", isMobileView ? "max-w-sm" : "max-w-4xl")}>
+        <div className="w-full flex-grow flex flex-col mx-auto max-w-sm md:max-w-4xl">
             <Card className="w-full flex-grow flex flex-col bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 md:p-8">
                 <CardContent className="p-0 flex-grow flex flex-col">
                     <div className="flex justify-between items-start mb-4">

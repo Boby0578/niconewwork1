@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mic, Volume2, X, Pencil } from 'lucide-react';
+import NewMicrophoneIcon from '@/components/icons/NewMicrophoneIcon';
+import { Volume2, X, Pencil } from 'lucide-react';
 import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
@@ -81,9 +82,9 @@ const Game = () => {
                                 )}
                                 onClick={() => setIsListening(!isListening)}
                             >
-                                <Mic className="h-16 w-16 text-white" />
+                                <NewMicrophoneIcon className="h-12 w-12 text-white" />
                             </Button>
-                            <p className="mt-4 text-lg font-semibold">Appuyez pour parler</p>
+                            <p className="mt-4 text-lg font-semibold">{isListening ? "..." : "Appuyez pour parler"}</p>
                         </div>
                         <div className="absolute right-0">
                             <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">

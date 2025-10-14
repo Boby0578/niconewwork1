@@ -3,10 +3,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { X, Mic, Volume2, VolumeX } from 'lucide-react';
-import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
+import { getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun, pronouns } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
 import { speak } from '@/utils/speech';
+import { getVerbsForLevel } from '@/data/verbLoader';
 
 interface Question {
   verb: Verb;
@@ -19,15 +20,50 @@ const Game = () => {
   const navigate = useNavigate();
   const { level, time, name, isMobileView } = location.state || { level: 1, time: 0, name: 'Joueur', isMobileView: false };
 
+  const [verbs, setVerbs] = useState<Verb[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [showConjugation, setShowConjugation] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
 
+  useEffect(() => {
+    const savedMute = localStorage.getItem('conjugaison-mute') === 'true';
+    setIsMuted(savedMute);
+
+    const loadVerbs = async () => {
+      setIsLoading(true);
+      try {
+        const loadedVerbs = await getVerbsForLevel(level);
+        if (loadedVerbs.length === 0) {
+          console.error(`Aucun verbe trouvé pour le niveau ${level}. Redirection vers l'accueil.`);
+          speak(`Aucun verbe n'est disponible pour le niveau ${level}.`);
+          navigate('/');
+          return;
+        }
+        setVerbs(loadedVerbs);
+      } catch (error) {
+        console.error("Erreur lors du chargement des verbes:", error);
+        speak("Une erreur est survenue lors du chargement des verbes.");
+        navigate('/');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadVerbs();
+  }, [level, navigate]);
+
   const generateQuestion = () => {
+    if (verbs.length === 0) return;
     setShowConjugation(false);
     const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
     const availableTenses = Object.keys(randomVerb.conjugations) as Tense[];
+    if (availableTenses.length === 0) {
+        console.error(`Le verbe "${randomVerb.name}" n'a aucune conjugaison définie.`);
+        generateQuestion(); // Try again with another verb
+        return;
+    }
     const randomTense = availableTenses[Math.floor(Math.random() * availableTenses.length)];
     const randomPronoun = pronouns[Math.floor(Math.random() * pronouns.length)];
     
@@ -35,10 +71,10 @@ const Game = () => {
   };
 
   useEffect(() => {
-    const savedMute = localStorage.getItem('conjugaison-mute') === 'true';
-    setIsMuted(savedMute);
-    generateQuestion();
-  }, []);
+    if (!isLoading && verbs.length > 0) {
+      generateQuestion();
+    }
+  }, [isLoading, verbs]);
 
   useEffect(() => {
     if (currentQuestion) {
@@ -56,16 +92,18 @@ const Game = () => {
     if (newMuteState) {
         window.speechSynthesis.cancel();
     } else if (currentQuestion) {
-      // If unmuting, speak the current question again
       const { verb, tense, pronoun } = currentQuestion;
       const questionText = `Conjugue le verbe ${verb.name} ${getTensePreposition(tense)}${tense}, à la ${getPronounText(pronoun)}.`;
-      // Use a small delay to prevent race conditions with cancel()
       setTimeout(() => speak(questionText), 100);
     }
   };
 
+  if (isLoading) {
+    return <div className="min-h-screen flex items-center justify-center text-xl font-bold">Chargement des verbes...</div>;
+  }
+
   if (!currentQuestion) {
-    return <div className="min-h-screen flex items-center justify-center">Chargement...</div>;
+    return <div className="min-h-screen flex items-center justify-center text-xl font-bold">Préparation du jeu...</div>;
   }
 
   const { verb, tense, pronoun } = currentQuestion;

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Smartphone, Tablet, Settings } from 'lucide-react';
+import { speak } from "@/utils/speech";
 
 const Index = () => {
   const [name, setName] = useState("");
@@ -12,40 +13,10 @@ const Index = () => {
   const [isMobileView, setIsMobileView] = useState(false);
   const navigate = useNavigate();
 
-  // Fonction pour la synthèse vocale
-  const speak = (text: string) => {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = 'fr-FR';
-
-      // Essayer de trouver une voix féminine française.
-      // La liste des voix peut se charger de manière asynchrone.
-      const voices = window.speechSynthesis.getVoices();
-      const frenchFemaleVoice = voices.find(
-        voice => voice.lang === 'fr-FR' && (voice.name.includes('Female') || voice.name.includes('Femme') || voice.name.includes('femme'))
-      );
-      
-      // Si aucune voix féminine n'est trouvée, prendre la première voix française disponible
-      const fallbackFrenchVoice = voices.find(voice => voice.lang === 'fr-FR');
-
-      utterance.voice = frenchFemaleVoice || fallbackFrenchVoice || null;
-      
-      window.speechSynthesis.speak(utterance);
-    } else {
-      console.error("La synthèse vocale n'est pas supportée par ce navigateur.");
-    }
-  };
-
   useEffect(() => {
     const savedName = localStorage.getItem("conjugaison-username");
     if (savedName) {
       setName(savedName);
-    }
-    // Préchauffer la liste des voix
-    if ('speechSynthesis' in window) {
-      window.speechSynthesis.onvoiceschanged = () => {
-        window.speechSynthesis.getVoices();
-      };
     }
   }, []);
 

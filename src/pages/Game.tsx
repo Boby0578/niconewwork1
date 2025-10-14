@@ -6,6 +6,7 @@ import { X, Mic } from 'lucide-react';
 import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
+import { speak } from '@/utils/speech';
 
 interface Question {
   verb: Verb;
@@ -35,6 +36,14 @@ const Game = () => {
   useEffect(() => {
     generateQuestion();
   }, []);
+
+  useEffect(() => {
+    if (currentQuestion) {
+      const { verb, tense, pronoun } = currentQuestion;
+      const questionText = `Conjugue le verbe ${verb.name} ${getTensePreposition(tense)}${tense}, à la ${getPronounText(pronoun)}.`;
+      speak(questionText);
+    }
+  }, [currentQuestion]);
 
   if (!currentQuestion) {
     return <div className="min-h-screen flex items-center justify-center">Chargement...</div>;

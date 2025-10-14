@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { Smartphone, Tablet, Settings, Volume2, VolumeX } from 'lucide-react';
+import { Smartphone, Tablet, Settings } from 'lucide-react';
 import { speak } from "@/utils/speech";
 
 const Index = () => {
@@ -11,7 +11,6 @@ const Index = () => {
   const [level, setLevel] = useState(1);
   const [time, setTime] = useState(0); // 0 for unlimited
   const [isMobileView, setIsMobileView] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,8 +18,6 @@ const Index = () => {
     if (savedName) {
       setName(savedName);
     }
-    const savedMute = localStorage.getItem('conjugaison-mute') === 'true';
-    setIsMuted(savedMute);
   }, []);
 
   const handleSaveName = () => {
@@ -44,15 +41,6 @@ const Index = () => {
     navigate("/game", { state: { level, time, name, isMobileView } });
   };
 
-  const toggleMute = () => {
-    const newMuteState = !isMuted;
-    setIsMuted(newMuteState);
-    localStorage.setItem('conjugaison-mute', String(newMuteState));
-    if (newMuteState) {
-      window.speechSynthesis.cancel();
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-start pt-6 p-4 text-gray-700">
       <div className={cn("w-full mx-auto flex justify-between items-center mb-4 px-2 md:px-0 transition-all duration-300", isMobileView ? "max-w-sm" : "max-w-3xl")}>
@@ -62,9 +50,6 @@ const Index = () => {
                   : <Smartphone className="h-5 w-5 text-gray-700" />}
           </Button>
           <div className="flex items-center gap-2">
-            <Button onClick={toggleMute} variant="outline" size="icon" className="bg-white/60 backdrop-blur-sm rounded-full shadow-md border-gray-300 hover:bg-white/80">
-                {isMuted ? <VolumeX className="h-5 w-5 text-gray-700" /> : <Volume2 className="h-5 w-5 text-gray-700" />}
-            </Button>
             <Button variant="outline" size="icon" className="bg-white/60 backdrop-blur-sm rounded-full shadow-md border-gray-300 hover:bg-white/80">
                 <Settings className="h-5 w-5 text-gray-700" />
             </Button>

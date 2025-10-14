@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { X, Mic, Volume2, VolumeX } from 'lucide-react';
+import { X, Mic, Volume2, VolumeX, Pencil } from 'lucide-react';
 import { getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun, pronouns } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
 import { speak } from '@/utils/speech';
 import { getVerbsForLevel } from '@/data/verbLoader';
+import { Input } from "@/components/ui/input";
 
 interface Question {
   verb: Verb;
@@ -26,6 +27,8 @@ const Game = () => {
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [showConjugation, setShowConjugation] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const [inputMode, setInputMode] = useState<'voice' | 'text'>('voice');
+  const [textAnswer, setTextAnswer] = useState('');
 
   useEffect(() => {
     const savedMute = localStorage.getItem('conjugaison-mute') === 'true';
@@ -132,14 +135,46 @@ const Game = () => {
                     </div>
 
                     <div className="flex-grow flex flex-col items-center justify-center py-6">
-                        <div
-                            className="h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-orange-400 hover:bg-orange-500 active:bg-red-600 shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer"
-                        >
-                            <Mic className="h-24 w-24 sm:h-32 sm:w-32 text-white" />
+                        <div className="flex items-center justify-center w-full max-w-lg">
+                            <div className="flex-1 flex justify-end">
+                                {/* Left spacer */}
+                            </div>
+
+                            <div className="px-4">
+                                {inputMode === 'voice' ? (
+                                    <div className="flex flex-col items-center">
+                                        <div
+                                            className="h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-orange-400 hover:bg-orange-500 active:bg-red-600 shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer"
+                                        >
+                                            <Mic className="h-24 w-24 sm:h-32 sm:w-32 text-white" />
+                                        </div>
+                                        <p className="mt-4 text-xl font-semibold text-gray-600">
+                                            Appuyez pour parler
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <div className="w-full max-w-sm flex flex-col items-center gap-2">
+                                        <p className="text-xl font-semibold text-gray-600 mb-2">
+                                            Écrivez votre réponse
+                                        </p>
+                                        <Input
+                                            type="text"
+                                            placeholder="Votre réponse..."
+                                            className="text-center text-lg"
+                                            value={textAnswer}
+                                            onChange={(e) => setTextAnswer(e.target.value)}
+                                        />
+                                        <Button>Valider</Button>
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="flex-1 flex justify-start">
+                                <Button variant="outline" size="icon" onClick={() => setInputMode(prev => prev === 'voice' ? 'text' : 'voice')} className="rounded-full shadow-md">
+                                    {inputMode === 'voice' ? <Pencil className="h-6 w-6" /> : <Mic className="h-6 w-6" />}
+                                </Button>
+                            </div>
                         </div>
-                        <p className="mt-4 text-xl font-semibold text-gray-600">
-                            Appuyez pour parler
-                        </p>
                     </div>
 
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">

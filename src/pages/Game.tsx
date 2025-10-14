@@ -153,18 +153,18 @@ const Game = () => {
                                         </p>
                                     </div>
                                 ) : (
-                                    <div className="w-full max-w-sm flex flex-col items-center gap-2">
+                                    <div className="w-full max-w-md flex flex-col items-center gap-4">
                                         <p className="text-xl font-semibold text-gray-600 mb-2">
                                             Écrivez votre réponse
                                         </p>
                                         <Input
                                             type="text"
                                             placeholder="Votre réponse..."
-                                            className="text-center text-lg"
+                                            className="text-center text-2xl h-16"
                                             value={textAnswer}
                                             onChange={(e) => setTextAnswer(e.target.value)}
                                         />
-                                        <Button>Valider</Button>
+                                        <Button size="lg" className="text-xl px-10 py-6">Valider</Button>
                                     </div>
                                 )}
                             </div>

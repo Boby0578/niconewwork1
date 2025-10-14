@@ -1,7 +1,7 @@
 import { Verb } from './verbs';
 
 export const getVerbsForLevel = async (level: number): Promise<Verb[]> => {
-    let modules: Record<string, () => Promise<{ default: Verb | null }>>;
+    let modules: Record<string, () => Promise<{ default: any }>>;
 
     switch (level) {
         case 1:
@@ -24,9 +24,28 @@ export const getVerbsForLevel = async (level: number): Promise<Verb[]> => {
     const verbPromises = Object.values(modules).map(importModule => importModule());
     const loadedModules = await Promise.all(verbPromises);
 
-    const verbs = loadedModules
-        .map(module => module.default)
-        .filter((verb): verb is Verb => verb !== null && verb.name !== '');
+    const allVerbs = loadedModules.flatMap(module => {
+        const defaultExport = module.default;
+        if (!defaultExport) {
+            return []; // Handles `export default null`
+        }
+        // Handles `export default { verb1, verb2 }`
+        if (typeof defaultExport === 'object' && !defaultExport.name) {
+            return Object.values(defaultExport);
+        }
+        // Handles `export default verb`
+        if (defaultExport.name) {
+            return [defaultExport];
+        }
+        return [];
+    });
 
-    return verbs;
+    const validVerbs = allVerbs.filter(
+        (verb): verb is Verb => verb && typeof verb === 'object' && 'name' in verb && 'conjugations' in verb
+    );
+
+    // Remove duplicates by verb name
+    const uniqueVerbs = Array.from(new Map(validVerbs.map(verb => [verb.name, verb])).values());
+
+    return uniqueVerbs;
 }

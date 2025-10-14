@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import NewMicrophoneIcon from '@/components/icons/NewMicrophoneIcon';
-import { Volume2, X, Pencil } from 'lucide-react';
+import { X } from 'lucide-react';
 import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
@@ -21,7 +20,6 @@ const Game = () => {
 
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
-  const [isListening, setIsListening] = useState(false);
   const [showConjugation, setShowConjugation] = useState(false);
 
   const generateQuestion = () => {
@@ -65,35 +63,7 @@ const Game = () => {
                         </p>
                     </div>
 
-                    <div className="relative flex justify-center items-center my-16">
-                        <div className="absolute left-0">
-                            <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">
-                                <Volume2 className="h-7 w-7 text-gray-600" />
-                            </Button>
-                        </div>
-                        <div className="text-center">
-                            <Button 
-                                size="icon" 
-                                className={cn(
-                                    "rounded-full h-24 w-24 shadow-lg transition-all duration-300 flex items-center justify-center",
-                                    isListening 
-                                    ? "bg-gradient-to-br from-red-500 to-red-600 scale-110"
-                                    : "bg-gradient-to-br from-yellow-400 to-orange-500"
-                                )}
-                                onClick={() => setIsListening(!isListening)}
-                            >
-                                <NewMicrophoneIcon className="h-12 w-12 text-white" />
-                            </Button>
-                            <p className="mt-4 text-lg font-semibold">{isListening ? "..." : "Appuyez pour parler"}</p>
-                        </div>
-                        <div className="absolute right-0">
-                            <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">
-                                <Pencil className="h-7 w-7 text-gray-600" />
-                            </Button>
-                        </div>
-                    </div>
-
-                    <div className="flex justify-center flex-wrap gap-4 mt-12">
+                    <div className="flex justify-center flex-wrap gap-4 mt-24 mb-12">
                         <Button className="bg-green-400 hover:bg-green-500 text-white rounded-full text-lg py-3 px-8">Révéler la réponse</Button>
                         <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full text-lg py-3 px-8" onClick={generateQuestion}>Question suivante</Button>
                         <Button className="bg-purple-500 hover:bg-purple-600 text-white rounded-full text-lg py-3 px-8" onClick={() => setShowConjugation(!showConjugation)}>

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { X, Mic, Volume2, VolumeX, Pencil } from 'lucide-react';
-import { getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun, pronouns } from '@/data/verbs';
+import { getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun, pronouns, getConjugationPronoun } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
 import { speak } from '@/utils/speech';
@@ -29,6 +29,8 @@ const Game = () => {
   const [isMuted, setIsMuted] = useState(false);
   const [inputMode, setInputMode] = useState<'voice' | 'text'>('voice');
   const [textAnswer, setTextAnswer] = useState('');
+  const [revealedAnswer, setRevealedAnswer] = useState<string | null>(null);
+  const [isRevealing, setIsRevealing] = useState(false);
 
   useEffect(() => {
     const savedMute = localStorage.getItem('conjugaison-mute') === 'true';
@@ -60,6 +62,9 @@ const Game = () => {
   const generateQuestion = () => {
     if (verbs.length === 0) return;
     setShowConjugation(false);
+    setRevealedAnswer(null);
+    setIsRevealing(false);
+    setTextAnswer('');
     const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
     const availableTenses = Object.keys(randomVerb.conjugations) as Tense[];
     if (availableTenses.length === 0) {
@@ -80,12 +85,12 @@ const Game = () => {
   }, [isLoading, verbs]);
 
   useEffect(() => {
-    if (currentQuestion) {
+    if (currentQuestion && !isRevealing) {
       const { verb, tense, pronoun } = currentQuestion;
       const questionText = `Conjugue le verbe ${verb.name} ${getTensePreposition(tense)}${tense}, à la ${getPronounText(pronoun)}.`;
       speak(questionText);
     }
-  }, [currentQuestion]);
+  }, [currentQuestion, isRevealing]);
 
   const toggleMute = () => {
     const newMuteState = !isMuted;
@@ -98,6 +103,44 @@ const Game = () => {
       const { verb, tense, pronoun } = currentQuestion;
       const questionText = `Conjugue le verbe ${verb.name} ${getTensePreposition(tense)}${tense}, à la ${getPronounText(pronoun)}.`;
       setTimeout(() => speak(questionText), 100);
+    }
+  };
+
+  const handleRevealAnswer = () => {
+    if (!currentQuestion || isRevealing) return;
+
+    setIsRevealing(true);
+
+    const { verb, tense, pronoun } = currentQuestion;
+    const conjugationPronoun = getConjugationPronoun(pronoun);
+    const conjugationForTense = verb.conjugations[tense];
+    
+    let correctAnswer: string | undefined;
+
+    if (typeof conjugationForTense === 'object' && conjugationForTense !== null) {
+        correctAnswer = (conjugationForTense as any)[conjugationPronoun];
+    } else if (typeof conjugationForTense === 'string') {
+        correctAnswer = conjugationForTense;
+    }
+
+    if (correctAnswer) {
+        setRevealedAnswer(correctAnswer);
+
+        let textToSpeak = `${pronoun} ${correctAnswer}`;
+        if (tense.includes('subjonctif')) {
+            textToSpeak = correctAnswer;
+        } else if (pronoun === 'je' && ['a', 'e', 'i', 'o', 'u', 'h'].includes(correctAnswer.charAt(0).toLowerCase())) {
+            textToSpeak = `j'${correctAnswer}`;
+        }
+        
+        speak(`La bonne réponse est : ${textToSpeak}`);
+
+        setTimeout(() => {
+            generateQuestion();
+        }, 5000);
+    } else {
+        speak("Désolé, je n'ai pas pu trouver la réponse.");
+        setIsRevealing(false);
     }
   };
 
@@ -117,12 +160,12 @@ const Game = () => {
             <Card className="w-full flex-grow flex flex-col bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 md:p-8">
                 <CardContent className="p-0 flex-grow flex flex-col">
                     <div className="flex justify-between items-start mb-4">
-                        <Button variant="destructive" size="sm" onClick={() => navigate('/')}>
+                        <Button variant="destructive" size="sm" onClick={() => navigate('/')} disabled={isRevealing}>
                             <X className="mr-1 h-4 w-4" /> Quitter
                         </Button>
                         <div className="text-center text-2xl font-bold text-gray-600">Score: {score}</div>
                         <div className="w-24 text-right">
-                           <Button onClick={toggleMute} variant="outline" size="icon" className="bg-white/60 backdrop-blur-sm rounded-full shadow-md border-gray-300 hover:bg-white/80">
+                           <Button onClick={toggleMute} variant="outline" size="icon" className="bg-white/60 backdrop-blur-sm rounded-full shadow-md border-gray-300 hover:bg-white/80" disabled={isRevealing}>
                                {isMuted ? <VolumeX className="h-5 w-5 text-gray-700" /> : <Volume2 className="h-5 w-5 text-gray-700" />}
                            </Button>
                         </div>
@@ -135,52 +178,59 @@ const Game = () => {
                     </div>
 
                     <div className="flex-grow flex flex-col items-center justify-center py-6">
-                        <div className="flex items-center justify-center w-full max-w-lg">
-                            <div className="flex-1 flex justify-end">
-                                {/* Left spacer */}
+                        {isRevealing && revealedAnswer ? (
+                            <div className="text-center p-4 bg-green-100 rounded-lg">
+                                <p className="text-xl text-gray-700">La bonne réponse est :</p>
+                                <p className="text-4xl font-bold text-green-700 mt-2">{revealedAnswer}</p>
                             </div>
+                        ) : (
+                            <div className="flex items-center justify-center w-full max-w-lg">
+                                <div className="flex-1 flex justify-end">
+                                    {/* Left spacer */}
+                                </div>
 
-                            <div className="px-4 w-full">
-                                {inputMode === 'voice' ? (
-                                    <div className="flex flex-col items-center">
-                                        <div
-                                            className="h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-orange-400 hover:bg-orange-500 active:bg-red-600 shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer"
-                                        >
-                                            <Mic className="h-24 w-24 sm:h-32 sm:w-32 text-white" />
+                                <div className="px-4 w-full">
+                                    {inputMode === 'voice' ? (
+                                        <div className="flex flex-col items-center">
+                                            <div
+                                                className="h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-orange-400 hover:bg-orange-500 active:bg-red-600 shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer"
+                                            >
+                                                <Mic className="h-24 w-24 sm:h-32 sm:w-32 text-white" />
+                                            </div>
+                                            <p className="mt-4 text-xl font-semibold text-gray-600">
+                                                Appuyez pour parler
+                                            </p>
                                         </div>
-                                        <p className="mt-4 text-xl font-semibold text-gray-600">
-                                            Appuyez pour parler
-                                        </p>
-                                    </div>
-                                ) : (
-                                    <div className="w-full max-w-lg flex flex-col items-center gap-4">
-                                        <p className="text-xl font-semibold text-gray-600 mb-2">
-                                            Écrivez votre réponse
-                                        </p>
-                                        <Input
-                                            type="text"
-                                            placeholder="Votre réponse..."
-                                            className="text-center text-2xl h-16 w-full"
-                                            value={textAnswer}
-                                            onChange={(e) => setTextAnswer(e.target.value)}
-                                        />
-                                        <Button size="lg" className="w-full text-xl px-10 py-6 bg-green-500 hover:bg-green-600">Valider</Button>
-                                    </div>
-                                )}
-                            </div>
+                                    ) : (
+                                        <div className="w-full max-w-lg flex flex-col items-center gap-4">
+                                            <p className="text-xl font-semibold text-gray-600 mb-2">
+                                                Écrivez votre réponse
+                                            </p>
+                                            <Input
+                                                type="text"
+                                                placeholder="Votre réponse..."
+                                                className="text-center text-2xl h-16 w-full"
+                                                value={textAnswer}
+                                                onChange={(e) => setTextAnswer(e.target.value)}
+                                            />
+                                            <Button size="lg" className="w-full text-xl px-10 py-6 bg-green-500 hover:bg-green-600">Valider</Button>
+                                        </div>
+                                    )}
+                                </div>
 
-                            <div className="flex-1 flex justify-start">
-                                <Button variant="outline" size="icon" onClick={() => setInputMode(prev => prev === 'voice' ? 'text' : 'voice')} className="rounded-full shadow-md">
-                                    {inputMode === 'voice' ? <Pencil className="h-6 w-6" /> : <Mic className="h-6 w-6" />}
-                                </Button>
+                                <div className="flex-1 flex justify-start">
+                                    <Button variant="outline" size="icon" onClick={() => setInputMode(prev => prev === 'voice' ? 'text' : 'voice')} className="rounded-full shadow-md">
+                                        {inputMode === 'voice' ? <Pencil className="h-6 w-6" /> : <Mic className="h-6 w-6" />}
+                                    </Button>
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
 
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
-                        <Button className="bg-green-400 hover:bg-green-500 text-white rounded-full text-lg py-3 px-8">Révéler la réponse</Button>
-                        <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full text-lg py-3 px-8" onClick={generateQuestion}>Question suivante</Button>
-                        <Button className="bg-purple-500 hover:bg-purple-600 text-white rounded-full text-lg py-3 px-8" onClick={() => setShowConjugation(!showConjugation)}>
+                        <Button className="bg-green-400 hover:bg-green-500 text-white rounded-full text-lg py-3 px-8" onClick={handleRevealAnswer} disabled={isRevealing}>Révéler la réponse</Button>
+                        <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full text-lg py-3 px-8" onClick={generateQuestion} disabled={isRevealing}>Question suivante</Button>
+                        <Button className="bg-purple-500 hover:bg-purple-600 text-white rounded-full text-lg py-3 px-8" onClick={() => setShowConjugation(!showConjugation)} disabled={isRevealing}>
                             {showConjugation ? "Cacher" : "Voir"} la conjugaison
                         </Button>
                     </div>

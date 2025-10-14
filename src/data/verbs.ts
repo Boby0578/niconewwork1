@@ -1,6 +1,7 @@
-export type Pronoun = "je" | "tu" | "il/elle" | "nous" | "vous" | "ils/elles";
+export type ConjugationPronoun = "je" | "tu" | "il/elle" | "nous" | "vous" | "ils/elles";
+export type Pronoun = "je" | "tu" | "il" | "elle" | "nous" | "vous" | "ils" | "elles";
 
-export const pronouns: Pronoun[] = ["je", "tu", "il/elle", "nous", "vous", "ils/elles"];
+export const pronouns: Pronoun[] = ["je", "tu", "il", "elle", "nous", "vous", "ils", "elles"];
 
 export type Tense =
   | "indicatif présent"
@@ -28,7 +29,7 @@ export type Tense =
   | "gérondif passé";
 
 export type Conjugation = {
-  [key in Pronoun]?: string;
+  [key in ConjugationPronoun]?: string;
 };
 
 export type Verb = {
@@ -51,17 +52,29 @@ export const getPronounText = (pronoun: Pronoun) => {
       return 'première personne du singulier';
     case 'tu':
       return 'deuxième personne du singulier';
-    case 'il/elle':
+    case 'il':
+    case 'elle':
       return 'troisième personne du singulier';
     case 'nous':
       return 'première personne du pluriel';
     case 'vous':
       return 'deuxième personne du pluriel';
-    case 'ils/elles':
+    case 'ils':
+    case 'elles':
       return 'troisième personne du pluriel';
   }
 };
 
 export const getPronounHint = (pronoun: Pronoun) => {
   return `(${pronoun})`;
+};
+
+export const getConjugationPronoun = (pronoun: Pronoun): ConjugationPronoun => {
+    if (pronoun === 'il' || pronoun === 'elle') {
+        return 'il/elle';
+    }
+    if (pronoun === 'ils' || pronoun === 'elles') {
+        return 'ils/elles';
+    }
+    return pronoun;
 };

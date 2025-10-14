@@ -74,16 +74,16 @@ const Game = () => {
                             <Button 
                                 size="icon" 
                                 className={cn(
-                                    "rounded-full h-40 w-40 shadow-lg transition-all duration-300 flex items-center justify-center",
+                                    "rounded-full h-24 w-24 shadow-lg transition-all duration-300 flex items-center justify-center",
                                     isListening 
                                     ? "bg-gradient-to-br from-red-500 to-red-600 scale-110"
                                     : "bg-gradient-to-br from-yellow-400 to-orange-500"
                                 )}
                                 onClick={() => setIsListening(!isListening)}
                             >
-                                <Mic className="h-32 w-32 text-white" />
+                                <Mic className="h-16 w-16 text-white" />
                             </Button>
-                            <p className="mt-4 text-lg font-semibold">{isListening ? "..." : "Appuyez pour parler"}</p>
+                            <p className="mt-4 text-lg font-semibold">Appuyez pour parler</p>
                         </div>
                         <div className="absolute right-0">
                             <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">

@@ -134,8 +134,6 @@ const pouvoir: Verb = {
     "conditionnel présent": { "je": "pourrais", "tu": "pourrais", "il/elle": "pourrait", "nous": "pourrions", "vous": "pourriez", "ils/elles": "pourraient" },
     "conditionnel passé première forme": { "je": "aurais pu", "tu": "aurais pu", "il/elle": "aurait pu", "nous": "aurions pu", "vous": "auriez pu", "ils/elles": "auraient pu" },
     "conditionnel passé deuxième forme": { "je": "eusse pu", "tu": "eusses pu", "il/elle": "eût pu", "nous": "eussions pu", "vous": "eussiez pu", "ils/elles": "eussent pu" },
-    "impératif présent": { "tu": "peux", "nous": "pouvons", "vous": "pouvez" },
-    "impératif passé": { "tu": "aie pu", "nous": "ayons pu", "vous": "ayez pu" },
     "infinitif présent": "pouvoir",
     "infinitif passé": "avoir pu",
     "participe présent": "pouvant",

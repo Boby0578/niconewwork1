@@ -78,3 +78,7 @@ export const getConjugationPronoun = (pronoun: Pronoun): ConjugationPronoun => {
     }
     return pronoun;
 };
+
+export const formatTenseName = (tense: string): string => {
+  return tense.replace(/ (première|deuxième|troisième) forme/i, '').trim();
+};

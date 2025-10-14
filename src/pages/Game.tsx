@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { X, Mic, Volume2, VolumeX, Pencil } from 'lucide-react';
-import { getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun, pronouns, getConjugationPronoun } from '@/data/verbs';
+import { getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun, pronouns, getConjugationPronoun, formatTenseName } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
 import { speak } from '@/utils/speech';
@@ -87,7 +87,8 @@ const Game = () => {
   useEffect(() => {
     if (currentQuestion && !isRevealing) {
       const { verb, tense, pronoun } = currentQuestion;
-      const questionText = `Conjugue le verbe ${verb.name} ${getTensePreposition(tense)}${tense}, à la ${getPronounText(pronoun)}.`;
+      const displayTense = formatTenseName(tense);
+      const questionText = `Conjugue le verbe ${verb.name} ${getTensePreposition(displayTense)}${displayTense}, à la ${getPronounText(pronoun)}.`;
       speak(questionText);
     }
   }, [currentQuestion, isRevealing]);
@@ -101,7 +102,8 @@ const Game = () => {
         window.speechSynthesis.cancel();
     } else if (currentQuestion) {
       const { verb, tense, pronoun } = currentQuestion;
-      const questionText = `Conjugue le verbe ${verb.name} ${getTensePreposition(tense)}${tense}, à la ${getPronounText(pronoun)}.`;
+      const displayTense = formatTenseName(tense);
+      const questionText = `Conjugue le verbe ${verb.name} ${getTensePreposition(displayTense)}${displayTense}, à la ${getPronounText(pronoun)}.`;
       setTimeout(() => speak(questionText), 100);
     }
   };
@@ -152,6 +154,7 @@ const Game = () => {
   }
 
   const { verb, tense, pronoun } = currentQuestion;
+  const displayTense = formatTenseName(tense);
 
   return (
     <div className="min-h-screen flex flex-col items-stretch p-4 sm:p-6 text-gray-700">
@@ -172,7 +175,7 @@ const Game = () => {
 
                     <div className="text-center pt-4 md:pt-8">
                         <p className="text-2xl md:text-4xl font-bold leading-tight">
-                            Conjugue le verbe <span className="text-orange-600">{verb.name}</span> {getTensePreposition(tense)}<span className="text-green-600">{tense}</span>, à la <span className="text-blue-600">{getPronounText(pronoun)}</span> <span className="text-gray-500 text-2xl">{getPronounHint(pronoun)}</span>
+                            Conjugue le verbe <span className="text-orange-600">{verb.name}</span> {getTensePreposition(displayTense)}<span className="text-green-600">{displayTense}</span>, à la <span className="text-blue-600">{getPronounText(pronoun)}</span> <span className="text-gray-500 text-2xl">{getPronounHint(pronoun)}</span>
                         </p>
                     </div>
 

@@ -21,17 +21,26 @@ const ConjugationTable: React.FC<ConjugationTableProps> = ({ verb }) => {
             {Object.entries(verb.conjugations).map(([tense, conjugation]) => (
             <div key={tense} className="mb-6">
                 <h4 className="font-bold text-lg text-gray-700 mb-2 capitalize border-b pb-1">{tense}</h4>
-                <ul>
-                {conjugation && Object.entries(conjugation).map(([pronoun, value]) => (
-                    <li key={pronoun} className="flex justify-between items-center py-2 border-b border-gray-200/80 last:border-b-0">
-                    <span className="w-1/4 font-semibold">{pronoun}</span>
-                    <span className="flex-grow text-left">{value}</span>
-                    <Button variant="ghost" size="icon" className="rounded-full">
-                        <Volume2 className="h-5 w-5 text-cyan-600" />
-                    </Button>
-                    </li>
-                ))}
-                </ul>
+                {typeof conjugation === 'string' ? (
+                    <div className="flex justify-between items-center py-2">
+                        <span>{conjugation}</span>
+                        <Button variant="ghost" size="icon" className="rounded-full">
+                            <Volume2 className="h-5 w-5 text-cyan-600" />
+                        </Button>
+                    </div>
+                ) : (
+                    <ul>
+                    {conjugation && Object.entries(conjugation).map(([pronoun, value]) => (
+                        <li key={pronoun} className="flex justify-between items-center py-2 border-b border-gray-200/80 last:border-b-0">
+                        <span className="w-1/4 font-semibold">{pronoun}</span>
+                        <span className="flex-grow text-left">{value}</span>
+                        <Button variant="ghost" size="icon" className="rounded-full">
+                            <Volume2 className="h-5 w-5 text-cyan-600" />
+                        </Button>
+                        </li>
+                    ))}
+                    </ul>
+                )}
             </div>
             ))}
         </CardContent>

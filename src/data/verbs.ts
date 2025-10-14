@@ -1,26 +1,52 @@
 export type Pronoun = "je" | "tu" | "il/elle" | "nous" | "vous" | "ils/elles";
-export type Tense = "présent" | "imparfait" | "futur" | "passé composé" | "subjonctif présent" | "impératif" | "passé simple" | "plus-que-parfait";
+
+export type Tense = 
+  "indicatif présent" | 
+  "indicatif imparfait" | 
+  "indicatif passé simple" | 
+  "indicatif futur simple" | 
+  "indicatif passé composé" | 
+  "indicatif plus-que-parfait" | 
+  "indicatif passé antérieur" | 
+  "indicatif futur antérieur" |
+  "subjonctif présent" | 
+  "subjonctif imparfait" | 
+  "subjonctof plus-que-parfait" | 
+  "subjonctif passé" |
+  "conditionnel présent" | 
+  "conditionnel passé première forme" | 
+  "conditionnel passé deuxième forme" |
+  "impératif présent" | 
+  "impératif passé" |
+  "infinitif présent" | 
+  "infinitif passé" |
+  "participe présent" | 
+  "participe passé" |
+  "gérondif présent" | 
+  "gérondif passé";
 
 export interface Conjugation {
-  "je": string;
-  "tu": string;
-  "il/elle": string;
-  "nous": string;
-  "vous": string;
-  "ils/elles": string;
+  "je"?: string;
+  "tu"?: string;
+  "il/elle"?: string;
+  "nous"?: string;
+  "vous"?: string;
+  "ils/elles"?: string;
 }
 
 export interface Verb {
   name: string;
   conjugations: {
-    [key in Tense]?: Partial<Conjugation>;
+    [key in Tense]?: Partial<Conjugation> | string;
   };
 }
 
 export const pronouns: Pronoun[] = ["je", "tu", "il/elle", "nous", "vous", "ils/elles"];
 
 export const getTensePreposition = (tense: Tense) => {
-  if (tense === 'imparfait') return "à l'";
+  if (tense.startsWith('indicatif') || tense.startsWith('subjonctif') || tense.startsWith('conditionnel')) {
+    return "à l'";
+  }
   return "au ";
 }
 

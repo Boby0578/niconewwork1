@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { X, Mic } from 'lucide-react';
+import { X, Mic, Volume2, VolumeX } from 'lucide-react';
 import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
@@ -22,6 +22,7 @@ const Game = () => {
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [showConjugation, setShowConjugation] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
 
   const generateQuestion = () => {
     setShowConjugation(false);
@@ -34,6 +35,8 @@ const Game = () => {
   };
 
   useEffect(() => {
+    const savedMute = localStorage.getItem('conjugaison-mute') === 'true';
+    setIsMuted(savedMute);
     generateQuestion();
   }, []);
 
@@ -44,6 +47,18 @@ const Game = () => {
       speak(questionText);
     }
   }, [currentQuestion]);
+
+  const toggleMute = () => {
+    const newMuteState = !isMuted;
+    setIsMuted(newMuteState);
+    localStorage.setItem('conjugaison-mute', String(newMuteState));
+    if (!newMuteState && currentQuestion) {
+      // If unmuting, speak the current question again
+      const { verb, tense, pronoun } = currentQuestion;
+      const questionText = `Conjugue le verbe ${verb.name} ${getTensePreposition(tense)}${tense}, à la ${getPronounText(pronoun)}.`;
+      speak(questionText);
+    }
+  };
 
   if (!currentQuestion) {
     return <div className="min-h-screen flex items-center justify-center">Chargement...</div>;
@@ -62,7 +77,9 @@ const Game = () => {
                         </Button>
                         <div className="text-center text-2xl font-bold text-gray-600">Score: {score}</div>
                         <div className="w-24 text-right">
-                           {/* Timer placeholder */}
+                           <Button onClick={toggleMute} variant="outline" size="icon" className="bg-white/60 backdrop-blur-sm rounded-full shadow-md border-gray-300 hover:bg-white/80">
+                               {isMuted ? <VolumeX className="h-5 w-5 text-gray-700" /> : <Volume2 className="h-5 w-5 text-gray-700" />}
+                           </Button>
                         </div>
                     </div>
 

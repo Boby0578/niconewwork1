@@ -21,6 +21,11 @@ if (typeof window !== 'undefined' && window.speechSynthesis) {
  * @param text The text to speak.
  */
 export const speak = (text: string) => {
+  const isMuted = localStorage.getItem('conjugaison-mute') === 'true';
+  if (isMuted) {
+    return;
+  }
+
   if (typeof window === 'undefined' || !window.speechSynthesis) {
     console.error("La synthèse vocale n'est pas supportée par ce navigateur.");
     return;

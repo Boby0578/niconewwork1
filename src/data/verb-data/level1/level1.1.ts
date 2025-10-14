@@ -1,5 +1,110 @@
 import { Verb } from '../../verbs';
 
+export const appeler: Verb = {
+  name: "appeler",
+  conjugations: {
+    "présent": { "je": "appelle", "tu": "appelles", "il/elle": "appelle", "nous": "appelons", "vous": "appelez", "ils/elles": "appellent" },
+    "imparfait": { "je": "appelais", "tu": "appelais", "il/elle": "appelait", "nous": "appelions", "vous": "appeliez", "ils/elles": "appelaient" },
+    "futur": { "je": "appellerai", "tu": "appelleras", "il/elle": "appellera", "nous": "appellerons", "vous": "appellerez", "ils/elles": "appelleront" },
+    "passé composé": { "j'": "ai appelé", "tu": "as appelé", "il/elle": "a appelé", "nous": "avons appelé", "vous": "avez appelé", "ils/elles": "ont appelé" },
+    "plus-que-parfait": { "j'": "avais appelé", "tu": "avais appelé", "il/elle": "avait appelé", "nous": "avions appelé", "vous": "aviez appelé", "ils/elles": "avaient appelé" },
+    "passé simple": { "je": "appelai", "tu": "appelas", "il/elle": "appela", "nous": "appelâmes", "vous": "appelâtes", "ils/elles": "appelèrent" },
+    "passé antérieur": { "j'": "eus appelé", "tu": "eus appelé", "il/elle": "eut appelé", "nous": "eûmes appelé", "vous": "eûtes appelé", "ils/elles": "eurent appelé" },
+    "futur antérieur": { "j'": "aurai appelé", "tu": "auras appelé", "il/elle": "aura appelé", "nous": "aurons appelé", "vous": "aurez appelé", "ils/elles": "auront appelé" },
+    "subjonctif présent": { "que je": "appelle", "que tu": "appelles", "qu'il/elle": "appelle", "que nous": "appelions", "que vous": "appeliez", "qu'ils/elles": "appellent" },
+    "subjonctif imparfait": { "que je": "appelasse", "que tu": "appelasses", "qu'il/elle": "appelât", "que nous": "appelassions", "que vous": "appelassiez", "qu'ils/elles": "appelassent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse appelé", "que tu": "eusses appelé", "qu'il/elle": "eût appelé", "que nous": "eussions appelé", "que vous": "eussiez appelé", "qu'ils/elles": "eussent appelé" },
+    "conditionnel présent": { "je": "appellerais", "tu": "appellerais", "il/elle": "appellerait", "nous": "appellerions", "vous": "appelleriez", "ils/elles": "appelleraient" },
+    "conditionnel passé": { "j'": "aurais appelé", "tu": "aurais appelé", "il/elle": "aurait appelé", "nous": "aurions appelé", "vous": "auriez appelé", "ils/elles": "auraient appelé" },
+    "impératif présent": { "appelle": "appelle", "appelons": "appelons", "appelez": "appelez" },
+    "impératif passé": { "aie appelé": "aie appelé", "ayons appelé": "ayons appelé", "avez appelé": "avez appelé" }
+  }
+};
+
+export const manger: Verb = {
+  name: "manger",
+  conjugations: {
+    "présent": { "je": "mange", "tu": "manges", "il/elle": "mange", "nous": "mangons", "vous": "mangez", "ils/elles": "mangent" },
+    "imparfait": { "je": "mangais", "tu": "mangais", "il/elle": "mangait", "nous": "mangions", "vous": "mangiez", "ils/elles": "mangeaient" },
+    "futur": { "je": "mangerai", "tu": "mangeras", "il/elle": "mangera", "nous": "mangerons", "vous": "mangerez", "ils/elles": "mangeront" },
+    "passé composé": { "j'": "ai mangé", "tu": "as mangé", "il/elle": "a mangé", "nous": "avons mangé", "vous": "avez mangé", "ils/elles": "ont mangé" },
+    "plus-que-parfait": { "j'": "avais mangé", "tu": "avais mangé", "il/elle": "avait mangé", "nous": "avions mangé", "vous": "aviez mangé", "ils/elles": "avaient mangé" },
+    "passé simple": { "je": "mangai", "tu": "mangas", "il/elle": "mangea", "nous": "mangâmes", "vous": "mangâtes", "ils/elles": "mangèrent" },
+    "passé antérieur": { "j'": "eus mangé", "tu": "eus mangé", "il/elle": "eut mangé", "nous": "eûmes mangé", "vous": "eûtes mangé", "ils/elles": "eurent mangé" },
+    "futur antérieur": { "j'": "aurai mangé", "tu": "auras mangé", "il/elle": "aura mangé", "nous": "aurons mangé", "vous": "aurez mangé", "ils/elles": "auront mangé" },
+    "subjonctif présent": { "que je": "mange", "que tu": "manges", "qu'il/elle": "mange", "que nous": "mangions", "que vous": "mangiez", "qu'ils/elles": "mangent" },
+    "subjonctif imparfait": { "que je": "mangasse", "que tu": "mangasses", "qu'il/elle": "mangât", "que nous": "mangassions", "que vous": "mangassiez", "qu'ils/elles": "mangassent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse mangé", "que tu": "eusses mangé", "qu'il/elle": "eût mangé", "que nous": "eussions mangé", "que vous": "eussiez mangé", "qu'ils/elles": "eussent mangé" },
+    "conditionnel présent": { "je": "mangerais", "tu": "mangerais", "il/elle": "mangerait", "nous": "mangerions", "vous": "mangeriez", "ils/elles": "mangeraient" },
+    "conditionnel passé": { "j'": "aurais mangé", "tu": "aurais mangé", "il/elle": "aurait mangé", "nous": "aurions mangé", "vous": "auriez mangé", "ils/elles": "auraient mangé" },
+    "impératif présent": { "mange": "mange", "mangons": "mangons", "mangez": "mangez" },
+    "impératif passé": { "aie mangé": "aie mangé", "ayons mangé": "ayons mangé", "avez mangé": "avez mangé" }
+  }
+};
+
+export const boire: Verb = {
+  name: "boire",
+  conjugations: {
+    "présent": { "je": "bois", "tu": "bois", "il/elle": "boit", "nous": "buvons", "vous": "buvez", "ils/elles": "boivent" },
+    "imparfait": { "je": "boisais", "tu": "boisais", "il/elle": "boisait", "nous": "boisions", "vous": "boisiez", "ils/elles": "boisaient" },
+    "futur": { "je": "boirai", "tu": "boiras", "il/elle": "boira", "nous": "boirons", "vous": "boirez", "ils/elles": "boiront" },
+    "passé composé": { "j'": "ai bu", "tu": "as bu", "il/elle": "a bu", "nous": "avons bu", "vous": "avez bu", "ils/elles": "ont bu" },
+    "plus-que-parfait": { "j'": "avais bu", "tu": "avais bu", "il/elle": "avait bu", "nous": "avions bu", "vous": "aviez bu", "ils/elles": "avaient bu" },
+    "passé simple": { "je": "bus", "tu": "bus", "il/elle": "but", "nous": "bûmes", "vous": "bûtes", "ils/elles": "burent" },
+    "passé antérieur": { "j'": "eus bu", "tu": "eus bu", "il/elle": "eut bu", "nous": "eûmes bu", "vous": "eûtes bu", "ils/elles": "eurent bu" },
+    "futur antérieur": { "j'": "aurai bu", "tu": "auras bu", "il/elle": "aura bu", "nous": "aurons bu", "vous": "aurez bu", "ils/elles": "auront bu" },
+    "subjonctif présent": { "que je": "bois", "que tu": "bois", "qu'il/elle": "boit", "que nous": "buvions", "que vous": "buviez", "qu'ils/elles": "boivent" },
+    "subjonctif imparfait": { "que je": "boisse", "que tu": "boisses", "qu'il/elle": "boît", "que nous": "boissions", "que vous": "boisiez", "qu'ils/elles": "boissent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse bu", "que tu": "eusses bu", "qu'il/elle": "eût bu", "que nous": "eussions bu", "que vous": "eussiez bu", "qu'ils/elles": "eussent bu" },
+    "conditionnel présent": { "je": "boirais", "tu": "boirais", "il/elle": "boirait", "nous": "boirions", "vous": "boiriez", "ils/elles": "boiraient" },
+    "conditionnel passé": { "j'": "aurais bu", "tu": "aurais bu", "il/elle": "aurait bu", "nous": "aurions bu", "vous": "auriez bu", "ils/elles": "auraient bu" },
+    "impératif présent": { "bois": "bois", "buvons": "buvons", "buvez": "buvez" },
+    "impératif passé": { "aie bu": "aie bu", "ayons bu": "ayons bu", "avez bu": "avez bu" }
+  }
+};
+
+export const sortir: Verb = {
+  name: "sortir",
+  conjugations: {
+    "présent": { "je": "sors", "tu": "sors", "il/elle": "sort", "nous": "sortons", "vous": "sortez", "ils/elles": "sortent" },
+    "imparfait": { "je": "sortais", "tu": "sortais", "il/elle": "sortait", "nous": "sortions", "vous": "sortiez", "ils/elles": "sortaient" },
+    "futur": { "je": "sortirai", "tu": "sortiras", "il/elle": "sortira", "nous": "sortirons", "vous": "sortirez", "ils/elles": "sortiront" },
+    "passé composé": { "j'": " suis sorti(e)", "tu": " es sorti(e)", "il/elle": " est sorti(e)", "nous": " sommes sorti(e)s", "vous": " êtes sorti(e)s", "ils/elles": " sont sorti(e)s" },
+    "plus-que-parfait": { "j'": "étais sorti(e)", "tu": "étais sorti(e)", "il/elle": "était sorti(e)", "nous": "étions sorti(e)s", "vous": "étiez sorti(e)s", "ils/elles": "étaient sorti(e)s" },
+    "passé simple": { "je": "sortis", "tu": "sortis", "il/elle": "sortit", "nous": "sortîmes", "vous": "sortîtes", "ils/elles": "sortirent" },
+    "passé antérieur": { "j'": "eus sorti(e)", "tu": "eus sorti(e)", "il/elle": "eut sorti(e)", "nous": "eûmes sorti(e)s", "vous": "eûtes sorti(e)s", "ils/elles": "eurent sorti(e)s" },
+    "futur antérieur": { "j'": "aurai sorti(e)", "tu": "auras sorti(e)", "il/elle": "aura sorti(e)", "nous": "aurons sorti(e)s", "vous": "aurez sorti(e)s", "ils/elles": "auront sorti(e)s" },
+    "subjonctif présent": { "que je": "sorte", "que tu": "sortes", "qu'il/elle": "sorte", "que nous": "sortions", "que vous": "sortiez", "qu'ils/elles": "sortent" },
+    "subjonctif imparfait": { "que je": "sortisse", "que tu": "sortisses", "qu'il/elle": "sortît", "que nous": "sortissions", "que vous": "sortissiez", "qu'ils/elles": "sortissent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse sorti(e)", "que tu": "eusses sorti(e)", "qu'il/elle": "eût sorti(e)", "que nous": "eussions sorti(e)s", "que vous": "eussiez sorti(e)s", "qu'ils/elles": "eussent sorti(e)s" },
+    "conditionnel présent": { "je": "sortirais", "tu": "sortirais", "il/elle": "sortrait", "nous": "sortirions", "vous": "sortiriez", "ils/elles": "sortraient" },
+    "conditionnel passé": { "j'": "aurais sorti(e)", "tu": "aurais sorti(e)", "il/elle": "aurait sorti(e)", "nous": "aurions sorti(e)s", "vous": "auriez sorti(e)s", "ils/elles": "auraient sorti(e)s" },
+    "impératif présent": { "sorte": "sorte", "sortons": "sortons", "sortez": "sortez" },
+    "impératif passé": { "aie sorti": "aie sorti", "ayons sorti": "ayons sorti", "avez sorti": "avez sorti" }
+  }
+};
+
+export const acheter: Verb = {
+  name: "acheter",
+  conjugations: {
+    "présent": { "je": "achète", "tu": "achètes", "il/elle": "achète", "nous": "achetons", "vous": "achetez", "ils/elles": "achètent" },
+    "imparfait": { "je": "achetais", "tu": "achetais", "il/elle": "achetait", "nous": "achetions", "vous": "achetiez", "ils/elles": "achetaient" },
+    "futur": { "je": "achèterai", "tu": "achèteras", "il/elle": "achètera", "nous": "achèterons", "vous": "achèterez", "ils/elles": "achèteront" },
+    "passé composé": { "j'": "ai acheté", "tu": "as acheté", "il/elle": "a acheté", "nous": "avons acheté", "vous": "avez acheté", "ils/elles": "ont acheté" },
+    "plus-que-parfait": { "j'": "avais acheté", "tu": "avais acheté", "il/elle": "avait acheté", "nous": "avions acheté", "vous": "aviez acheté", "ils/elles": "avaient acheté" },
+    "passé simple": { "je": "achetai", "tu": "achetas", "il/elle": "acheta", "nous": "achetâmes", "vous": "achetâtes", "ils/elles": "achetèrent" },
+    "passé antérieur": { "j'": "eus acheté", "tu": "eus acheté", "il/elle": "eut acheté", "nous": "eûmes acheté", "vous": "eûtes acheté", "ils/elles": "eurent acheté" },
+    "futur antérieur": { "j'": "aurai acheté", "tu": "auras acheté", "il/elle": "aura acheté", "nous": "aurons acheté", "vous": "aurez acheté", "ils/elles": "auront acheté" },
+    "subjonctif présent": { "que je": "achète", "que tu": "achètes", "qu'il/elle": "achète", "que nous": "achetions", "que vous": "achetiez", "qu'ils/elles": "achètent" },
+    "subjonctif imparfait": { "que je": "achetasse", "que tu": "achetasses", "qu'il/elle": "achetât", "que nous": "achetassions", "que vous": "achetassiez", "qu'ils/elles": "achetassent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse acheté", "que tu": "eusses acheté", "qu'il/elle": "eût acheté", "que nous": "eussions acheté", "que vous": "eussiez acheté", "qu'ils/elles": "eussent acheté" },
+    "conditionnel présent": { "je": "achèterais", "tu": "achèterais", "il/elle": "achèterait", "nous": "achèterions", "vous": "achètriez", "ils/elles": "achètraient" },
+    "conditionnel passé": { "j'": "aurais acheté", "tu": "aurais acheté", "il/elle": "aurait acheté", "nous": "aurions acheté", "vous": "auriez acheté", "ils/elles": "auraient acheté" },
+    "impératif présent": { "achète": "achète", "achetons": "achetons", "achetez": "achetez" },
+    "impératif passé": { "aie acheté": "aie acheté", "ayons acheté": "ayons acheté", "avez acheté": "avez acheté" }
+  }
+};
+
 export const vendre: Verb = {
   name: "vendre",
   conjugations: {
@@ -106,21 +211,6 @@ export const rentrer: Verb = {
 };
 
 export default {
-  aller,
-  faire,
-  voir,
-  mettre,
-  tenir,
-  parler,
-  venir,
-  pouvoir,
-  vouloir,
-  savoir,
-  être,
-  avoir,
-  prendre,
-  lire,
-  écrire,
   appeler,
   manger,
   boire,

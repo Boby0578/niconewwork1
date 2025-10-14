@@ -1,13 +1,6 @@
 import { Verb } from './verbs';
 
-export const getVerbsForLevel = async (level: number): Promise<Verb[]> => {
-    // ... (code existant)
-
-    return uniqueVerbs;
-}
-
-export const getAllVerbs = async (): Promise<Verb[]> => {
-    const modules = import.meta.glob('./verb-data/**/*.ts');
+const loadVerbsFromModules = async (modules: Record<string, () => Promise<any>>): Promise<Verb[]> => {
     const verbPromises = Object.values(modules).map(importModule => importModule());
     const loadedModules = await Promise.all(verbPromises);
 
@@ -35,6 +28,36 @@ export const getAllVerbs = async (): Promise<Verb[]> => {
     const uniqueVerbs = Array.from(new Map(validVerbs.map(verb => [verb.name, verb])).values());
 
     return uniqueVerbs;
+};
+
+export const getVerbsForLevel = async (level: number): Promise<Verb[]> => {
+    let modules: Record<string, () => Promise<any>>;
+
+    switch (level) {
+        case 1:
+            modules = import.meta.glob('./verb-data/level1/*.ts');
+            break;
+        case 2:
+            modules = import.meta.glob(['./verb-data/level1/*.ts', './verb-data/level2/*.ts']);
+            break;
+        case 3:
+            modules = import.meta.glob(['./verb-data/level1/*.ts', './verb-data/level2/*.ts', './verb-data/level3/*.ts']);
+            break;
+        case 4:
+            modules = import.meta.glob(['./verb-data/level1/*.ts', './verb-data/level2/*.ts', './verb-data/level3/*.ts', './verb-data/level4/*.ts']);
+            break;
+        default:
+            // Fallback to level 1
+            modules = import.meta.glob('./verb-data/level1/*.ts');
+            break;
+    }
+    
+    return loadVerbsFromModules(modules);
+};
+
+export const getAllVerbs = async (): Promise<Verb[]> => {
+    const modules = import.meta.glob('./verb-data/**/*.ts');
+    return loadVerbsFromModules(modules);
 }
 
 export const getExistingVerbs = async (): Promise<string[]> => {

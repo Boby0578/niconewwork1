@@ -49,7 +49,7 @@ const verb2: Verb = {
     "impératif passé": { "tu": "aie trouvé", "nous": "ayons trouvé", "vous": "ayez trouvé"},
     "conditionnel futur": { "je": "trouverais", "tu": "trouverais", "il/elle": "trouverait", "nous": "trouverions", "vous": "trouveriez", "ils/elles": "trouveraient"},
     "subjonctif imparfait 2": { "je": "trouvasse", "tu": "trouvasses", "il/elle": "trouvât", "nous": "trouvassions", "vous": "trouvassiez", "ils/elles": "trouvassent"},
-    "participe passé": { "je": "trouvé", "tu": "trouvé", "il/elle": "trouvé", "nous": "trouvé", "vous": "trouvé", "ils/elles": "trouvé"},
+    "participe passé": { "j'": "trouvé", "tu": "trouvé", "il/elle": "trouvé", "nous": "trouvé", "vous": "trouvé", "ils/elles": "trouvé"},
     "participe présent": { "je": "trouvant", "tu": "trouvant", "il/elle": "trouvant", "nous": "trouvant", "vous": "trouvant", "ils/elles": "trouvant"},
   },
 };
@@ -191,7 +191,7 @@ const verb7: Verb = {
 
 const verb8: Verb = {
   name: "savoir",
-  conjugations": {
+  conjugations: {
     "présent": { "je": "sais", "tu": "sais", "il/elle": "sait", "nous": "savons", "vous": "savez", "ils/elles": "savent" },
     "imparfait": { "je": "savais", "tu": "savais", "il/elle": "savait", "nous": "savions", "vous": "saviez", "ils/elles": "savaient" },
     "futur": { "je": "saurai", "tu": "sauras", "il/elle": "saura", "nous": "saurons", "vous": "saurez", "ils/elles": "sauront" },
@@ -270,4 +270,139 @@ const verb10: Verb = {
   },
 };
 
-export default [verb1, verb2, verb3, verb4, verb5, verb6, verb7, verb8, verb9, verb10];
+const verb11: Verb = {
+ name: "venir",
+  conjugations: {
+    "présent": { "je": "viens", "tu": "viens", "il/elle": "vient", "nous": "venons", "vous": "venez", "ils/elles": "viennent" },
+    "imparfait": { "je": "venais", "tu": "venais", "il/elle": "venait", "nous": "venions", "vous": "veniez", "ils/elles": "venaient" },
+    "futur": { "je": "viendrai", "tu": "viendras", "il/elle": "viendra", "nous": "viendrons", "vous": "viendrez", "ils/elles": "viendront" },
+    "passé composé": { "j'": "suis venu(e)", "tu": "es venu(e)", "il/elle": "est venu(e)", "nous": "sommes venu(e)s", "vous": "êtes venu(e)s", "ils/elles": "sont venu(e)s" },
+    "subjonctif présent": { "je": "que je vienne", "tu": "que tu viennes", "il/elle": "qu'il/elle vienne", "nous": "que nous venions", "vous": "que vous veniez", "ils/elles": "qu'ils/elles viennent" },
+    "impératif": { "tu": "viens", "nous": "venons", "vous": "venez" },
+    "passé simple": { "je": "vins", "tu": "vins", "il/elle": "vint", "nous": "vînmes", "vous": "vîntes", "ils/elles": "vinrent" },
+    "plus-que-parfait": { "j'": "étais venu(e)", "tu": "étais venu(e)", "il/elle": "était venu(e)", "nous": "étions venu(e)s", "vous": "étiez venu(e)s", "ils/elles": "étaient venu(e)s" },
+    "futur antérieur": { "j'": "serai venu(e)", "tu": "seras venu(e)", "il/elle": "sera venu(e)", "nous": "serons venu(e)s", "vous": "serez venu(e)s", "ils/elles": "seront venu(e)s" },
+    "conditionnel présent": { "je": "viendrais", "tu": "viendrais", "il/elle": "viendrait", "nous": "viendrions", "vous": "viendriez", "ils/elles": "viendraient" },
+    "conditionnel passé": { "j'": "serais venu(e)", "tu": "serais venu(e)", "il/elle": "serait venu(e)", "nous": "serions venu(e)s", "vous": "seriez venu(e)s", "ils/elles": "seraient venu(e)s" },
+    "subjonctif imparfait": { "je": "que je vinsse", "tu": "que tu vinsses", "il/elle": "qu'il/elle vînt", "nous": "que nous vinssions", "vous": "que vous vinssiez", "ils/elles": "qu'ils/elles vinssent" },
+    "subjonctif passé": { "j'": "que je sois venu(e)", "tu": "que tu sois venu(e)", "il/elle": "qu'il/elle soit venu(e)", "nous": "que nous soyons venu(e)s", "vous": "que vous soyez venu(e)s", "ils/elles": "qu'ils/elles soient venu(e)s" },
+    "subjonctif plus-que-parfait": { "j'": "que je fusse venu(e)", "tu": "que tu fusses venu(e)", "il/elle": "qu'il/elle fût venu(e)", "nous": "que nous fussions venu(e)s", "vous": "que vous fussiez venu(e)s", "ils/elles": "qu'ils/elles fussent venu(e)s" },
+    "passé antérieur": { "j'": "fus venu(e)", "tu": "fus venu(e)", "il/elle": "fut venu(e)", "nous": "fûmes venu(e)s", "vous": "fûtes venu(e)s", "ils/elles": "furent venu(e)s"},
+    "futur simple": { "je": "viendrai", "tu": "viendras", "il/elle": "viendra", "nous": "viendrons", "vous": "viendrez", "ils/elles": "viendront"},
+    "impératif passé": { "tu": "sois venu(e)", "nous": "soyons venu(e)s", "vous": "soyez venu(e)s"},
+    "conditionnel futur": { "je": "viendrais", "tu": "viendrais", "il/elle": "viendrait", "nous": "viendrions", "vous": "viendriez", "ils/elles": "viendraient"},
+    "subjonctif imparfait 2": { "je": "vinsse", "tu": "vinsses", "il/elle": "vînt", "nous": "vinssions", "vous": "vinssiez", "ils/elles": "vinssent"},
+    "participe passé": { "je": "venu(e)", "tu": "venu(e)", "il/elle": "venu(e)", "nous": "venu(e)s", "vous": "venu(e)s", "ils/elles": "venu(e)s"},
+    "participe présent": { "je": "venant", "tu": "venant", "il/elle": "venant", "nous": "venant", "vous": "venant", "ils/elles": "venant"},
+  },
+};
+
+const verb12: Verb = {
+  name: "falloir",
+  conjugations: {
+    "présent": { "il/elle": "faut" },
+    "imparfait": { "il/elle": "fallait" },
+    "futur": { "il/elle": "faudra" },
+    "passé composé": { "il/elle": "a fallu" },
+    "subjonctif présent": { "il/elle": "qu'il/elle faille" },
+    "impératif": {},
+    "passé simple": { "il/elle": "fallut" },
+    "plus-que-parfait": { "il/elle": "avait fallu" },
+    "futur antérieur": { "il/elle": "aura fallu" },
+    "conditionnel présent": { "il/elle": "faudrait" },
+    "conditionnel passé": { "il/elle": "aurait fallu" },
+    "subjonctif imparfait": { "il/elle": "qu'il/elle fallût" },
+    "subjonctif passé": { "il/elle": "qu'il/elle ait fallu" },
+    "subjonctif plus-que-parfait": { "il/elle": "qu'il/elle eût fallu" },
+    "passé antérieur": { "il/elle": "eut fallu"},
+    "futur simple": { "il/elle": "faudra"},
+    "impératif passé": {},
+    "conditionnel futur": { "il/elle": "faudrait"},
+    "subjonctif imparfait 2": { "il/elle": "fallût"},
+    "participe passé": { "il/elle": "fallu"},
+    "participe présent": { "il/elle": "fallant"},
+  },
+};
+
+const verb13: Verb = {
+  name: "croire",
+  conjugations: {
+    "présent": { "je": "crois", "tu": "crois", "il/elle": "croit", "nous": "croyons", "vous": "croyez", "ils/elles": "croient" },
+    "imparfait": { "je": "croyais", "tu": "croyais", "il/elle": "croyait", "nous": "croyions", "vous": "croyiez", "ils/elles": "croyaient" },
+    "futur": { "je": "croirai", "tu": "croiras", "il/elle": "croira", "nous": "croirons", "vous": "croirez", "ils/elles": "croiront" },
+    "passé composé": { "j'": "ai cru", "tu": "as cru", "il/elle": "a cru", "nous": "avons cru", "vous": "avez cru", "ils/elles": "ont cru" },
+    "subjonctif présent": { "je": "que je croie", "tu": "que tu croies", "il/elle": "qu'il/elle croie", "nous": "que nous croyions", "vous": "que vous croyiez", "ils/elles": "qu'ils/elles croient" },
+    "impératif": { "tu": "crois", "nous": "croyons", "vous": "croyez" },
+    "passé simple": { "je": "crus", "tu": "crus", "il/elle": "crut", "nous": "crûmes", "vous": "crûtes", "ils/elles": "crurent" },
+    "plus-que-parfait": { "j'": "avais cru", "tu": "avais cru", "il/elle": "avait cru", "nous": "avions cru", "vous": "aviez cru", "ils/elles": "avaient cru" },
+    "futur antérieur": { "j'": "aurai cru", "tu": "auras cru", "il/elle": "aura cru", "nous": "aurons cru", "vous": "aurez cru", "ils/elles": "auront cru" },
+    "conditionnel présent": { "je": "croirais", "tu": "croirais", "il/elle": "croirait", "nous": "croirions", "vous": "croiriez", "ils/elles": "croiraient" },
+    "conditionnel passé": { "j'": "aurais cru", "tu": "aurais cru", "il/elle": "aurait cru", "nous": "aurions cru", "vous": "auriez cru", "ils/elles": "auraient cru" },
+    "subjonctif imparfait": { "je": "que je crusse", "tu": "que tu crusses", "il/elle": "qu'il/elle crût", "nous": "que nous crussions", "vous": "que vous crussiez", "ils/elles": "qu'ils/elles crussent" },
+    "subjonctif passé": { "j'": "que j'aie cru", "tu": "que tu aies cru", "il/elle": "qu'il/elle ait cru", "nous": "que nous ayons cru", "vous": "que vous ayez cru", "ils/elles": "qu'ils/elles aient cru" },
+    "subjonctif plus-que-parfait": { "j'": "que j'eusse cru", "tu": "que tu eusses cru", "il/elle": "qu'il/elle eût cru", "nous": "que nous eussions cru", "vous": "que vous eussiez cru", "ils/elles": "qu'ils/elles eussent cru" },
+    "passé antérieur": { "j'": "eus cru", "tu": "eus cru", "il/elle": "eut cru", "nous": "eûmes cru", "vous": "eûtes cru", "ils/elles": "eurent cru"},
+    "futur simple": { "je": "croirai", "tu": "croiras", "il/elle": "croira", "nous": "croirons", "vous": "croirez", "ils/elles": "croiront"},
+    "impératif passé": { "tu": "aie cru", "nous": "ayons cru", "vous": "ayez cru"},
+    "conditionnel futur": { "je": "croirais", "tu": "croirais", "il/elle": "croirait", "nous": "croirions", "vous": "croiriez", "ils/elles": "croiraient"},
+    "subjonctif imparfait 2": { "je": "crusse", "tu": "crusses", "il/elle": "crût", "nous": "crussions", "vous": "crussiez", "ils/elles": "crussent"},
+    "participe passé": { "je": "cru", "tu": "cru", "il/elle": "cru", "nous": "cru", "vous": "cru", "ils/elles": "cru"},
+    "participe présent": { "je": "croyant", "tu": "croyant", "il/elle": "croyant", "nous": "croyant", "vous": "croyant", "ils/elles": "croyant"},
+  },
+};
+
+const verb14: Verb = {
+  name: "dire",
+  conjugations: {
+    "présent": { "je": "dis", "tu": "dis", "il/elle": "dit", "nous": "disons", "vous": "dites", "ils/elles": "disent" },
+    "imparfait": { "je": "disais", "tu": "disais", "il/elle": "disait", "nous": "disions", "vous": "disiez", "ils/elles": "disaient" },
+    "futur": { "je": "dirai", "tu": "diras", "il/elle": "dira", "nous": "dirons", "vous": "direz", "ils/elles": "diront" },
+    "passé composé": { "j'": "ai dit", "tu": "as dit", "il/elle": "a dit", "nous": "avons dit", "vous": "avez dit", "ils/elles": "ont dit" },
+    "subjonctif présent": { "je": "que je dise", "tu": "que tu dises", "il/elle": "qu'il/elle dise", "nous": "que nous disions", "vous": "que vous disiez", "ils/elles": "qu'ils/elles disent" },
+    "impératif": { "tu": "dis", "nous": "disons", "vous": "dites" },
+    "passé simple": { "je": "dis", "tu": "dis", "il/elle": "dit", "nous": "dîmes", "vous": "dîtes", "ils/elles": "dirent" },
+    "plus-que-parfait": { "j'": "avais dit", "tu": "avais dit", "il/elle": "avait dit", "nous": "avions dit", "vous": "aviez dit", "ils/elles": "avaient dit" },
+    "futur antérieur": { "j'": "aurai dit", "tu": "auras dit", "il/elle": "aura dit", "nous": "aurons dit", "vous": "aurez dit", "ils/elles": "auront dit" },
+    "conditionnel présent": { "je": "dirais", "tu": "dirais", "il/elle": "dirait", "nous": "dirions", "vous": "diriez", "ils/elles": "diraient" },
+    "conditionnel passé": { "j'": "aurais dit", "tu": "aurais dit", "il/elle": "aurait dit", "nous": "aurions dit", "vous": "auriez dit", "ils/elles": "auraient dit" },
+    "subjonctif imparfait": { "je": "que je disse", "tu": "que tu disses", "il/elle": "qu'il/elle dît", "nous": "que nous dissions", "vous": "que vous dissiez", "ils/elles": "qu'ils/elles dissent" },
+    "subjonctif passé": { "j'": "que j'aie dit", "tu": "que tu aies dit", "il/elle": "qu'il/elle ait dit", "nous": "que nous ayons dit", "vous": "que vous ayez dit", "ils/elles": "qu'ils/elles aient dit" },
+    "subjonctif plus-que-parfait": { "j'": "que j'eusse dit", "tu": "que tu eusses dit", "il/elle": "qu'il/elle eût dit", "nous": "que nous eussions dit", "vous": "que vous eussiez dit", "ils/elles": "qu'ils/elles eussent dit" },
+    "passé antérieur": { "j'": "eus dit", "tu": "eus dit", "il/elle": "eut dit", "nous": "eûmes dit", "vous": "eûtes dit", "ils/elles": "eurent dit"},
+    "futur simple": { "je": "dirai", "tu": "diras", "il/elle": "dira", "nous": "dirons", "vous": "direz", "ils/elles": "diront"},
+    "impératif passé": { "tu": "aie dit", "nous": "ayons dit", "vous": "ayez dit"},
+    "conditionnel futur": { "je": "dirais", "tu": "dirais", "il/elle": "dirait", "nous": "diririons", "vous": "diriez", "ils/elles": "diraient"},
+    "subjonctif imparfait 2": { "je": "disse", "tu": "disses", "il/elle": "dît", "nous": "dissions", "vous": "dissiez", "ils/elles": "dissent"},
+    "participe passé": { "je": "dit", "tu": "dit", "il/elle": "dit", "nous": "dit", "vous": "dit", "ils/elles": "dit"},
+    "participe présent": { "je": "disant", "tu": "disant", "il/elle": "disant", "nous": "disant", "vous": "disant", "ils/elles": "disant"},
+  },
+};
+
+const verb15: Verb = {
+  name: "mettre",
+  conjugations: {
+    "présent": { "je": "mets", "tu": "mets", "il/elle": "met", "nous": "mettons", "vous": "mettez", "ils/elles": "mettent" },
+    "imparfait": { "je": "mettais", "tu": "mettais", "il/elle": "mettait", "nous": "mettions", "vous": "mettiez", "ils/elles": "mettaient" },
+    "futur": { "je": "mettrai", "tu": "mettras", "il/elle": "mettra", "nous": "mettrons", "vous": "mettrez", "ils/elles": "mettront" },
+    "passé composé": { "j'": "ai mis", "tu": "as mis", "il/elle": "a mis", "nous": "avons mis", "vous": "avez mis", "ils/elles": "ont mis" },
+    "subjonctif présent": { "je": "que je mette", "tu": "que tu mettes", "il/elle": "qu'il/elle mette", "nous": "que nous mettions", "vous": "que vous mettiez", "ils/elles": "qu'ils/elles mettent" },
+    "impératif": { "tu": "mets", "nous": "mettons", "vous": "mettez" },
+    "passé simple": { "je": "mis", "tu": "mis", "il/elle": "mit", "nous": "mîmes", "vous": "mîtes", "ils/elles": "mirent" },
+    "plus-que-parfait": { "j'": "avais mis", "tu": "avais mis", "il/elle": "avait mis", "nous": "avions mis", "vous": "aviez mis", "ils/elles": "avaient mis" },
+    "futur antérieur": { "j'": "aurai mis", "tu": "auras mis", "il/elle": "aura mis", "nous": "aurons mis", "vous": "aurez mis", "ils/elles": "auront mis" },
+    "conditionnel présent": { "je": "mettrais", "tu": "mettrais", "il/elle": "mettrait", "nous": "mettrions", "vous": "mettriez", "ils/elles": "mettraient" },
+    "conditionnel passé": { "j'": "aurais mis", "tu": "aurais mis", "il/elle": "aurait mis", "nous": "aurions mis", "vous": "auriez mis", "ils/elles": "auraient mis" },
+    "subjonctif imparfait": { "je": "que je misse", "tu": "que tu misses", "il/elle": "qu'il/elle mît", "nous": "que nous missions", "vous": "que vous missiez", "ils/elles": "qu'ils/elles missent" },
+    "subjonctif passé": { "j'": "que j'aie mis", "tu": "que tu aies mis", "il/elle": "qu'il/elle ait mis", "nous": "que nous ayons mis", "vous": "que vous ayez mis", "ils/elles": "qu'ils/elles aient mis" },
+    "subjonctif plus-que-parfait": { "j'": "que j'eusse mis", "tu": "que tu eusses mis", "il/elle": "qu'il/elle eût mis", "nous": "que nous eussions mis", "vous": "que vous eussiez mis", "ils/elles": "qu'ils/elles eussent mis" },
+   "passé antérieur": { "j'": "eus mis", "tu": "eus mis", "il/elle": "eut mis", "nous": "eûmes mis", "vous": "eûtes mis", "ils/elles": "eurent mis"},
+    "futur simple": { "je": "mettrai", "tu": "mettras", "il/elle": "mettra", "nous": "mettrons", "vous": "mettrez", "ils/elles": "mettront"},
+    "impératif passé": { "tu": "aie mis", "nous": "ayons mis", "vous": "ayez mis"},
+    "conditionnel futur": { "je": "mettrais", "tu": "mettrais", "il/elle": "mettrait", "nous": "mettrions", "vous": "mettriez", "ils/elles": "mettraient"},
+    "subjonctif imparfait 2": { "je": "misse", "tu": "misses", "il/elle": "mît", "nous": "missions", "vous": "missiez", "ils/elles": "missent"},
+    "participe passé": { "je": "mis", "tu": "mis", "il/elle": "mis", "nous": "mis", "vous": "mis", "ils/elles": "mis"},
+    "participe présent": { "je": "mettant", "tu": "mettant", "il/elle": "mettant", "nous": "mettant", "vous": "mettant", "ils/elles": "mettant"},
+  },
+};
+
+export default [verb1, verb2, verb3, verb4, verb5, verb6, verb7, verb8, verb9, verb10, verb11, verb12, verb13, verb14, verb15];

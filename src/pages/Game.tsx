@@ -44,7 +44,7 @@ const Game = () => {
   const { verb, tense, pronoun } = currentQuestion;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 text-gray-700">
+    <div className="min-h-screen flex flex-col items-center justify-start pt-10 p-4 text-gray-700">
         <div className={cn("w-full mx-auto transition-all duration-300", isMobileView ? "max-w-sm" : "max-w-4xl")}>
             <Card className="w-full bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 md:p-8">
                 <CardContent className="p-0">
@@ -60,11 +60,11 @@ const Game = () => {
 
                     <div className="text-center my-8 min-h-[100px] flex items-center justify-center">
                         <p className="text-2xl md:text-4xl font-bold leading-tight">
-                            Conjugue le verbe <span className="text-green-600">{verb.name}</span> {getTensePreposition(tense)}<span className="text-purple-600">{tense}</span>, à la <span className="text-indigo-600">{getPronounText(pronoun)}</span> {getPronounHint(pronoun)}
+                            Conjugue le verbe <span className="text-orange-600">{verb.name}</span> {getTensePreposition(tense)}<span className="text-green-600">{tense}</span>, à la <span className="text-blue-600">{getPronounText(pronoun)}</span> {getPronounHint(pronoun)}
                         </p>
                     </div>
 
-                    <div className="relative flex justify-center items-center my-12">
+                    <div className="relative flex justify-center items-center my-16">
                         <div className="absolute left-0">
                             <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">
                                 <Volume2 className="h-7 w-7 text-gray-600" />
@@ -74,14 +74,14 @@ const Game = () => {
                             <Button 
                                 size="icon" 
                                 className={cn(
-                                    "rounded-full h-28 w-28 shadow-lg transition-all duration-300",
+                                    "rounded-full h-32 w-32 shadow-lg transition-all duration-300",
                                     isListening 
                                     ? "bg-gradient-to-br from-red-500 to-red-600 scale-110"
                                     : "bg-gradient-to-br from-yellow-400 to-orange-500"
                                 )}
                                 onClick={() => setIsListening(!isListening)}
                             >
-                                <Mic className="h-12 w-12 text-white" />
+                                <Mic className="h-16 w-16 text-white" />
                             </Button>
                             <p className="mt-4 text-lg">{isListening ? "..." : "Appuyez pour parler"}</p>
                         </div>
@@ -93,9 +93,9 @@ const Game = () => {
                     </div>
 
                     <div className="flex justify-center flex-wrap gap-4 mt-12">
-                        <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full px-6">Révéler la réponse</Button>
-                        <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full px-6" onClick={generateQuestion}>Question suivante</Button>
-                        <Button className="bg-purple-500 hover:bg-purple-600 text-white rounded-full px-6" onClick={() => setShowConjugation(!showConjugation)}>
+                        <Button className="bg-green-400 hover:bg-green-500 text-white rounded-full text-lg py-3 px-8">Révéler la réponse</Button>
+                        <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full text-lg py-3 px-8" onClick={generateQuestion}>Question suivante</Button>
+                        <Button className="bg-purple-500 hover:bg-purple-600 text-white rounded-full text-lg py-3 px-8" onClick={() => setShowConjugation(!showConjugation)}>
                             {showConjugation ? "Cacher" : "Voir"} la conjugaison
                         </Button>
                     </div>

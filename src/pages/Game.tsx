@@ -66,11 +66,10 @@ const Game = () => {
 
                     <div className="flex-grow flex flex-col items-center justify-center py-6">
                         <Button
-                            variant="outline"
                             size="icon"
-                            className="h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-white/50 shadow-lg border-4 border-gray-300 hover:border-cyan-400 hover:bg-white/80 transition-all duration-300"
+                            className="h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-orange-500 hover:bg-orange-600 shadow-lg transition-all duration-300"
                         >
-                            <NewMicrophoneIcon className="h-20 w-20 sm:h-24 sm:w-24 text-gray-500 transition-colors" />
+                            <NewMicrophoneIcon className="h-24 w-24 sm:h-32 sm:w-32 text-white" />
                         </Button>
                         <p className="mt-4 text-xl font-semibold text-gray-600">
                             Appuyez pour parler

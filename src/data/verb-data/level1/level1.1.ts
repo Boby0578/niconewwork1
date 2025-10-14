@@ -1,107 +1,107 @@
 import { Verb } from '../../verbs';
 
-export constetre: Verb = {
-  name: "être",
+export const vendre: Verb = {
+  name: "vendre",
   conjugations: {
-    "présent": { "je": "suis", "tu": "es", "il/elle": "est", "nous": "sommes", "vous": "êtes", "ils/elles": "sont" },
-    "imparfait": { "je": "étais", "tu": "étais", "il/elle": "était", "nous": "étions", "vous": "étiez", "ils/elles": "étaient" },
-    "futur": { "je": "serai", "tu": "seras", "il/elle": "sera", "nous": "serons", "vous": "serez", "ils/elles": "seront" },
-    "passé composé": { "j'": "ai été", "tu": "as été", "il/elle": "a été", "nous": "avons été", "vous": "avez été", "ils/elles": "ont été" },
-    "plus-que-parfait": { "j'": "étais", "tu": "étais", "il/elle": "était", "nous": "étions", "vous": "étiez", "ils/elles": "étaient" },
-    "passé simple": { "je": "étais", "tu": "étais", "il/elle": "était", "nous": "étions", "vous": "étiez", "ils/elles": "étaient" },
-    "passé antérieur": { "j'": "eus été", "tu": "eus été", "il/elle": "eut été", "nous": "eûmes été", "vous": "eûtes été", "ils/elles": "eurent été" },
-    "futur antérieur": { "j'": "aurai été", "tu": "auras été", "il/elle": "aura été", "nous": "aurons été", "vous": "aurez été", "ils/elles": "auront été" },
-    "subjonctif présent": { "que je": "sois", "que tu": "sois", "qu'il/elle": "soit", "que nous": "soyons", "que vous": "soyez", "qu'ils/elles": "soient" },
-    "subjonctif imparfait": { "que je": "fusse", "que tu": "fusses", "qu'il/elle": "fût", "que nous": "fussions", "que vous": "fussiez", "qu'ils/elles": "fussent" },
-    "subjonctif plus-que-parfait": { "que j'": "eusse été", "que tu": "eusses été", "qu'il/elle": "eût été", "que nous": "eussions été", "que vous": "eussiez été", "qu'ils/elles": "eussent été" },
-    "conditionnel présent": { "je": "serais", "tu": "serais", "il/elle": "serait", "nous": "serions", "vous": "seriez", "ils/elles": "seraient" },
-    "conditionnel passé": { "j'": "aurais été", "tu": "aurais été", "il/elle": "aurait été", "nous": "aurions été", "vous": "auriez été", "ils/elles": "auraient été" },
-    "impératif présent": { "sois": "sois", "soyons": "soyons", "soyez": "soyez" },
-    "impératif passé": { "aie été": "aie été", "ayons été": "ayons été", "avez été": "avez été" }
+    "présent": { "je": "vends", "tu": "vends", "il/elle": "vend", "nous": "vendons", "vous": "vendez", "ils/elles": "vendent" },
+    "imparfait": { "je": "vendais", "tu": "vendais", "il/elle": "vendait", "nous": "vendions", "vous": "vendiez", "ils/elles": "vendaient" },
+    "futur": { "je": "vendrai", "tu": "vendras", "il/elle": "vendra", "nous": "vendrons", "vous": "vendrez", "ils/elles": "vendront" },
+    "passé composé": { "j'": "ai vendu", "tu": "as vendu", "il/elle": "a vendu", "nous": "avons vendu", "vous": "avez vendu", "ils/elles": "ont vendu" },
+    "plus-que-parfait": { "j'": "avais vendu", "tu": "avais vendu", "il/elle": "avait vendu", "nous": "avions vendu", "vous": "aviez vendu", "ils/elles": "avaient vendu" },
+    "passé simple": { "je": "vendis", "tu": "vendis", "il/elle": "vendit", "nous": "vendîmes", "vous": "vendîtes", "ils/elles": "vendirent" },
+    "passé antérieur": { "j'": "eus vendu", "tu": "eus vendu", "il/elle": "eut vendu", "nous": "eûmes vendu", "vous": "eûtes vendu", "ils/elles": "eurent vendu" },
+    "futur antérieur": { "j'": "aurai vendu", "tu": "auras vendu", "il/elle": "aura vendu", "nous": "aurons vendu", "vous": "aurez vendu", "ils/elles": "auront vendu" },
+    "subjonctif présent": { "que je": "vende", "que tu": "vendes", "qu'il/elle": "vende", "que nous": "vendions", "que vous": "vendiez", "qu'ils/elles": "vendent" },
+    "subjonctif imparfait": { "que je": "vendisse", "que tu": "vendisses", "qu'il/elle": "vendît", "que nous": "vendissions", "que vous": "vendissiez", "qu'ils/elles": "vendissent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse vendu", "que tu": "eusses vendu", "qu'il/elle": "eût vendu", "que nous": "eussions vendu", "que vous": "eussiez vendu", "qu'ils/elles": "eussent vendu" },
+    "conditionnel présent": { "je": "vendrais", "tu": "vendrais", "il/elle": "vendrait", "nous": "vendrions", "vous": "vendriez", "ils/elles": "vendraient" },
+    "conditionnel passé": { "j'": "aurais vendu", "tu": "aurais vendu", "il/elle": "aurait vendu", "nous": "aurions vendu", "vous": "auriez vendu", "ils/elles": "auraient vendu" },
+    "impératif présent": { "vends": "vends", "vendons": "vendons", "vendez": "vendez" },
+    "impératif passé": { "aie vendu": "aie vendu", "ayons vendu": "ayons vendu", "avez vendu": "avez vendu" }
   }
 };
 
-export const avoir: Verb = {
-  name: "avoir",
+export const essayer: Verb = {
+  name: "essayer",
   conjugations: {
-    "présent": { "je": "ai", "tu": "as", "il/elle": "a", "nous": "avons", "vous": "avez", "ils/elles": "ont" },
-    "imparfait": { "je": "avais", "tu": "avais", "il/elle": "avait", "nous": "avions", "vous": "aviez", "ils/elles": "avaient" },
-    "futur": { "je": "aurai", "tu": "auras", "il/elle": "aura", "nous": "aurons", "vous": "aurez", "ils/elles": "auront" },
-    "passé composé": { "j'": "ai eu", "tu": "as eu", "il/elle": "a eu", "nous": "avons eu", "vous": "avez eu", "ils/elles": "ont eu" },
-    "plus-que-parfait": { "j'": "avais eu", "tu": "avais eu", "il/elle": "avait eu", "nous": "avions eu", "vous": "aviez eu", "ils/elles": "avaient eu" },
-    "passé simple": { "je": "eus", "tu": "eus", "il/elle": "eut", "nous": "eûmes", "vous": "eûtes", "ils/elles": "eurent" },
-    "passé antérieur": { "j'": "eus eu", "tu": "eus eu", "il/elle": "eut eu", "nous": "eûmes eu", "vous": "eûtes eu", "ils/elles": "eurent eu" },
-    "futur antérieur": { "j'": "aurai eu", "tu": "auras eu", "il/elle": "aura eu", "nous": "aurons eu", "vous": "aurez eu", "ils/elles": "auront eu" },
-    "subjonctif présent": { "que je": "aie", "que tu": "aies", "qu'il/elle": "aie", "que nous": "ayons", "que vous": "ayez", "qu'ils/elles": "aient" },
-    "subjonctif imparfait": { "que je": "eusse", "que tu": "eusses", "qu'il/elle": "eût", "que nous": "eussions", "que vous": "eussiez", "qu'ils/elles": "eussent" },
-    "subjonctif plus-que-parfait": { "que j'": "eusse eu", "que tu": "eusses eu", "qu'il/elle": "eût eu", "que nous": "eussions eu", "que vous": "eussiez eu", "qu'ils/elles": "eussent eu" },
-    "conditionnel présent": { "je": "aurais", "tu": "aurais", "il/elle": "aurait", "nous": "aurions", "vous": "auriez", "ils/elles": "auraient" },
-    "conditionnel passé": { "j'": "aurais eu", "tu": "aurais eu", "il/elle": "aurait eu", "nous": "aurions eu", "vous": "auriez eu", "ils/elles": "auraient eu" },
-    "impératif présent": { "aie": "aie", "ayons": "ayons", "ayez": "ayez" },
-    "impératif passé": { "aie eu": "aie eu", "ayons eu": "ayons eu", "avez eu": "avez eu" }
+    "présent": { "je": "essaye", "tu": "essais", "il/elle": "essaye", "nous": "essayons", "vous": "essaye", "ils/elles": "essaient" },
+    "imparfait": { "je": "essayais", "tu": "essayais", "il/elle": "essayait", "nous": "essayions", "vous": "essayiez", "ils/elles": "essayaient" },
+    "futur": { "je": "essaierai", "tu": "essaieras", "il/elle": "essaiera", "nous": "essaierons", "vous": "essaierez", "ils/elles": "essaieront" },
+    "passé composé": { "j'": "ai essayé", "tu": "as essayé", "il/elle": "a essayé", "nous": "avons essayé", "vous": "avez essayé", "ils/elles": "ont essayé" },
+    "plus-que-parfait": { "j'": "avais essayé", "tu": "avais essayé", "il/elle": "avait essayé", "nous": "avions essayé", "vous": "aviez essayé", "ils/elles": "avaient essayé" },
+    "passé simple": { "je": "essayai", "tu": "essayas", "il/elle": "essaya", "nous": "essayâmes", "vous": "essayâtes", "ils/elles": "essayèrent" },
+    "passé antérieur": { "j'": "eus essayé", "tu": "eus essayé", "il/elle": "eut essayé", "nous": "eûmes essayé", "vous": "eûtes essayé", "ils/elles": "eurent essayé" },
+    "futur antérieur": { "j'": "aurai essayé", "tu": "auras essayé", "il/elle": "aura essayé", "nous": "aurons essayé", "vous": "aurez essayé", "ils/elles": "auront essayé" },
+    "subjonctif présent": { "que je": "essaye", "que tu": "essais", "qu'il/elle": "essaye", "que nous": "essayions", "que vous": "essayiez", "qu'ils/elles": "essaient" },
+    "subjonctif imparfait": { "que je": "essayasse", "que tu": "essayasses", "qu'il/elle": "essayât", "que nous": "essayassions", "que vous": "essayassiez", "qu'ils/elles": "essayassent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse essayé", "que tu": "eusses essayé", "qu'il/elle": "eût essayé", "que nous": "eussions essayé", "que vous": "eussiez essayé", "qu'ils/elles": "eussent essayé" },
+    "conditionnel présent": { "je": "essairais", "tu": "essairais", "il/elle": "essairait", "nous": "essairions", "vous": "essairiez", "ils/elles": "essairaient" },
+    "conditionnel passé": { "j'": "aurais essayé", "tu": "aurais essayé", "il/elle": "aurait essayé", "nous": "aurions essayé", "vous": "auriez essayé", "ils/elles": "auraient essayé" },
+    "impératif présent": { "essaye": "essaye", "essayons": "essayons", "essaye": "essaye" },
+    "impératif passé": { "aie essayé": "aie essayé", "ayons essayé": "ayons essayé", "avez essayé": "avez essayé" }
   }
 };
 
-export constprendre: Verb = {
-  name: "prendre",
+export const arriver: Verb = {
+  name: "arriver",
   conjugations: {
-    "présent": { "je": "prends", "tu": "prends", "il/elle": "prend", "nous": "prenons", "vous": "prenez", "ils/elles": "prènent" },
-    "imparfait": { "je": "prenais", "tu": "prenais", "il/elle": "prenait", "nous": "prenions", "vous": "preniez", "ils/elles": "prenaient" },
-    "futur": { "je": "prendrai", "tu": "prendras", "il/elle": "prendra", "nous": "prendrons", "vous": "prendrez", "ils/elles": "prendront" },
-    "passé composé": { "j'": "ai pris", "tu": "as pris", "il/elle": "a pris", "nous": "avons pris", "vous": "avez pris", "ils/elles": "ont pris" },
-    "plus-que-parfait": { "j'": "avais pris", "tu": "avais pris", "il/elle": "avait pris", "nous": "avions pris", "vous": "aviez pris", "ils/elles": "avaient pris" },
-    "passé simple": { "je": "pris", "tu": "pris", "il/elle": "prit", "nous": "prîmes", "vous": "prîtes", "ils/elles": "prirent" },
-    "passé antérieur": { "j'": "eus pris", "tu": "eus pris", "il/elle": "eut pris", "nous": "eûmes pris", "vous": "eûtes pris", "ils/elles": "eurent pris" },
-    "futur antérieur": { "j'": "aurai pris", "tu": "auras pris", "il/elle": "aura pris", "nous": "aurons pris", "vous": "aurez pris", "ils/elles": "auront pris" },
-    "subjonctif présent": { "que je": "prenne", "que tu": "prennes", "qu'il/elle": "prenne", "que nous": "prenions", "que vous": "preniez", "qu'ils/elles": "prènent" },
-    "subjonctif imparfait": { "que je": "prinssse", "que tu": "prinsses", "qu'il/elle": "prît", "que nous": "prinssions", "que vous": "prinssiez", "qu'ils/elles": "prinssent" },
-    "subjonctif plus-que-parfait": { "que j'": "eusse pris", "que tu": "eusses pris", "qu'il/elle": "eût pris", "que nous": "eussions pris", "que vous": "eussiez pris", "qu'ils/elles": "eussent pris" },
-    "conditionnel présent": { "je": "prendrais", "tu": "prendrais", "il/elle": "prendrait", "nous": "prendrions", "vous": "prendriez", "ils/elles": "prendraient" },
-    "conditionnel passé": { "j'": "aurais pris", "tu": "aurais pris", "il/elle": "aurait pris", "nous": "aurions pris", "vous": "auriez pris", "ils/elles": "auraient pris" },
-    "impératif présent": { "prends": "prends", "prenons": "prenons", "prenez": "prenez" },
-    "impératif passé": { "aie pris": "aie pris", "ayons pris": "ayons pris", "avez pris": "avez pris" }
+    "présent": { "je": "arrive", "tu": "arrives", "il/elle": "arrive", "nous": "arrivons", "vous": "arrivez", "ils/elles": " arrivent" },
+    "imparfait": { "je": "arrivais", "tu": "arrivais", "il/elle": "arrivait", "nous": "arrivions", "vous": "arriviez", "ils/elles": "arrivaient" },
+    "futur": { "je": "arriverai", "tu": "arriveras", "il/elle": "arrivera", "nous": "arriverons", "vous": "arriverez", "ils/elles": "arriveront" },
+    "passé composé": { "j'": " suis arrivé", "tu": " es arrivé", "il/elle": " est arrivé", "nous": " sommes arrivés", "vous": " êtes arrivés", "ils/elles": " sont arrivés" },
+    "plus-que-parfait": { "j'": "étais arrivé", "tu": "étais arrivé", "il/elle": "était arrivé", "nous": "étions arrivés", "vous": "étiez arrivés", "ils/elles": "étaient arrivés" },
+    "passé simple": { "je": "arrivai", "tu": "arrivas", "il/elle": "arriva", "nous": "arrivâmes", "vous": "arrivâtes", "ils/elles": "arrivèrent" },
+    "passé antérieur": { "j'": "eus arrivé", "tu": "eus arrivé", "il/elle": "eut arrivé", "nous": "eûmes arrivé", "vous": "eûtes arrivé", "ils/elles": "eurent arrivé" },
+    "futur antérieur": { "j'": "aurai arrivé", "tu": "auras arrivé", "il/elle": "aura arrivé", "nous": "aurons arrivé", "vous": "aurez arrivé", "ils/elles": "auront arrivé" },
+    "subjonctif présent": { "que je": "arrive", "que tu": "arrives", "qu'il/elle": "arrive", "que nous": "arrivions", "que vous": "arriviez", "qu'ils/elles": " arrivent" },
+    "subjonctif imparfait": { "que je": "arrivasse", "que tu": "arrivasses", "qu'il/elle": "arrivât", "que nous": "arrivassions", "que vous": "arrivassiez", "qu'ils/elles": "arrivassent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse arrivé", "que tu": "eusses arrivé", "qu'il/elle": "eût arrivé", "que nous": "eussions arrivé", "que vous": "eussiez arrivé", "qu'ils/elles": "eussent arrivé" },
+    "conditionnel présent": { "je": "arriverais", "tu": "arriverais", "il/elle": "arriverait", "nous": "arriverions", "vous": "arriveriez", "ils/elles": "arriveraient" },
+    "conditionnel passé": { "j'": "aurais arrivé", "tu": "aurais arrivé", "il/elle": "aurait arrivé", "nous": "aurions arrivé", "vous": "auriez arrivé", "ils/elles": "auraient arrivé" },
+    "impératif présent": { "arrive": "arrive", "arrivons": "arrivons", "arrivez": "arrivez" },
+    "impératif passé": { "aie arrivé": "aie arrivé", "ayons arrivé": "ayons arrivé", "avez arrivé": "avez arrivé" }
   }
 };
 
-export constlire: Verb = {
-  name: "lire",
+export const partir: Verb = {
+  name: "partir",
   conjugations: {
-    "présent": { "je": "lis", "tu": "lises", "il/elle": "lit", "nous": "lisons", "vous": "lisez", "ils/elles": "lisent" },
-    "imparfait": { "je": "lissais", "tu": "lissais", "il/elle": "lisait", "nous": "lisions", "vous": "lisiez", "ils/elles": "lisaient" },
-    "futur": { "je": "lirai", "tu": "liras", "il/elle": "lira", "nous": "lirons", "vous": "lirez", "ils/elles": "liront" },
-    "passé composé": { "j'": "ai lu", "tu": "as lu", "il/elle": "a lu", "nous": "avons lu", "vous": "avez lu", "ils/elles": "ont lu" },
-    "plus-que-parfait": { "j'": "avais lu", "tu": "avais lu", "il/elle": "avait lu", "nous": "avions lu", "vous": "aviez lu", "ils/elles": "avaient lu" },
-    "passé simple": { "je": "lus", "tu": "lus", "il/elle": "lut", "nous": "lûmes", "vous": "lûtes", "ils/elles": "lurent" },
-    "passé antérieur": { "j'": "eus lu", "tu": "eus lu", "il/elle": "eut lu", "nous": "eûmes lu", "vous": "eûtes lu", "ils/elles": "eurent lu" },
-    "futur antérieur": { "j'": "aurai lu", "tu": "auras lu", "il/elle": "aura lu", "nous": "aurons lu", "vous": "aurez lu", "ils/elles": "auront lu" },
-    "subjonctif présent": { "que je": "lise", "que tu": "lises", "qu'il/elle": "lise", "que nous": "lisions", "que vous": "lissiez", "qu'ils/elles": "lisent" },
-    "subjonctif imparfait": { "que je": "lissasse", "que tu": "lissasses", "qu'il/elle": "lissât", "que nous": "lissions", "que vous": "lissiiez", "qu'ils/elles": "lissent" },
-    "subjonctif plus-que-parfait": { "que j'": "eusse lu", "que tu": "eusses lu", "qu'il/elle": "eût lu", "que nous": "eussions lu", "que vous": "eussiez lu", "qu'ils/elles": "eussent lu" },
-    "conditionnel présent": { "je": "lirais", "tu": "lirais", "il/elle": "lirait", "nous": "lirions", "vous": "liriez", "ils/elles": "liraient" },
-    "conditionnel passé": { "j'": "aurais lu", "tu": "aurais lu", "il/elle": "aurait lu", "nous": "aurions lu", "vous": "auriez lu", "ils/elles": "auraient lu" },
-    "impératif présent": { "lise": "lise", "lisons": "lisons", "lisez": "lisez" },
-    "impératif passé": { "aie lu": "aie lu", "ayons lu": "ayons lu", "avez lu": "avez lu" }
+    "présent": { "je": "pars", "tu": "pars", "il/elle": "part", "nous": "partons", "vous": "partez", "ils/elles": "partent" },
+    "imparfait": { "je": "partais", "tu": "partais", "il/elle": "partait", "nous": "partions", "vous": "partiez", "ils/elles": "partaient" },
+    "futur": { "je": "partirai", "tu": "partiras", "il/elle": "partira", "nous": "partirons", "vous": "partirez", "ils/elles": "partiront" },
+    "passé composé": { "j'": " suis parti", "tu": " es parti", "il/elle": " est parti", "nous": " sommes partis", "vous": " êtes partis", "ils/elles": " sont partis" },
+    "plus-que-parfait": { "j'": "étais parti", "tu": "étais parti", "il/elle": "était parti", "nous": "étions partis", "vous": "étiez partis", "ils/elles": "étaient partis" },
+    "passé simple": { "je": "partis", "tu": "partis", "il/elle": "partit", "nous": "partîmes", "vous": "partîtes", "ils/elles": "partirent" },
+    "passé antérieur": { "j'": "eus parti", "tu": "eus parti", "il/elle": "eut parti", "nous": "eûmes partis", "vous": "eûtes partis", "ils/elles": "eurent partis" },
+    "futur antérieur": { "j'": "aurai parti", "tu": "auras parti", "il/elle": "aura parti", "nous": "aurons partis", "vous": "aurez partis", "ils/elles": "auront partis" },
+    "subjonctif présent": { "que je": "parte", "que tu": "partes", "qu'il/elle": "parte", "que nous": "partions", "que vous": "partiez", "qu'ils/elles": "partent" },
+    "subjonctif imparfait": { "que je": "partisse", "que tu": "partisses", "qu'il/elle": "partît", "que nous": "partissions", "que vous": "partissiez", "qu'ils/elles": "partissent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse parti", "que tu": "eusses parti", "qu'il/elle": "eût parti", "que nous": "eussions partis", "que vous": "eussiez partis", "qu'ils/elles": "eussent partis" },
+    "conditionnel présent": { "je": "partirais", "tu": "partirais", "il/elle": "partirait", "nous": "partirions", "vous": "partiriez", "ils/elles": "partiraient" },
+    "conditionnel passé": { "j'": "aurais parti", "tu": "aurais parti", "il/elle": "aurait parti", "nous": "aurions partis", "vous": "auriez partis", "ils/elles": "auraient partis" },
+    "impératif présent": { "parte": "parte", "partons": "partons", "partez": "partez" },
+    "impératif passé": { "aie parti": "aie parti", "ayons partis": "ayons partis", "avez partis": "avez partis" }
   }
 };
 
-export constécrire: Verb = {
-  name: "écrire",
+export const rentrer: Verb = {
+  name: "rentrer",
   conjugations: {
-    "présent": { "je": "écris", "tu": "écrits", "il/elle": "écrit", "nous": "écrivons", "vous": "écrivez", "ils/elles": "écrivent" },
-    "imparfait": { "je": "écrivais", "tu": "écrivais", "il/elle": "écrivait", "nous": "écrivions", "vous": "écriviez", "ils/elles": "écrivaient" },
-    "futur": { "je": "écrirai", "tu": "écriras", "il/elle": "écrira", "nous": "écrirons", "vous": "écrirez", "ils/elles": "écriront" },
-    "passé composé": { "j'": "ai écrit", "tu": "as écrit", "il/elle": "a écrit", "nous": "avons écrit", "vous": "avez écrit", "ils/elles": "ont écrit" },
-    "plus-que-parfait": { "j'": "avais écrit", "tu": "avais écrit", "il/elle": "avait écrit", "nous": "avions écrit", "vous": "aviez écrit", "ils/elles": "avaient écrit" },
-    "passé simple": { "je": "écrivis", "tu": "écrivis", "il/elle": "écrivit", "nous": "écrivîmes", "vous": "écrivîtes", "ils/elles": "écrivirent" },
-    "passé antérieur": { "j'": "eus écrit", "tu": "eus écrit", "il/elle": "eut écrit", "nous": "eûmes écrit", "vous": "eûtes écrit", "ils/elles": "eurent écrit" },
-    "futur antérieur": { "j'": "aurai écrit", "tu": "auras écrit", "il/elle": "aura écrit", "nous": "aurons écrit", "vous": "aurez écrit", "ils/elles": "auront écrit" },
-    "subjonctif présent": { "que je": "écrive", "que tu": "écrites", "qu'il/elle": "écrit", "que nous": "écrivions", "que vous": "écriviez", "qu'ils/elles": "écrivent" },
-    "subjonctif imparfait": { "que je": "écrivisse", "que tu": "écrivisses", "qu'il/elle": "écrivît", "que nous": "écrivissions", "que vous": "écrivissiez", "qu'ils/elles": "écrivissent" },
-    "subjonctif plus-que-parfait": { "que j'": "eusse écrit", "que tu": "eusses écrit", "qu'il/elle": "eût écrit", "que nous": "eussions écrit", "que vous": "eussiez écrit", "qu'ils/elles": "eussent écrit" },
-    "conditionnel présent": { "je": "écrirais", "tu": "écrirais", "il/elle": "écrirait", "nous": "écririons", "vous": "écririez", "ils/elles": "écriraient" },
-    "conditionnel passé": { "j'": "aurais écrit", "tu": "aurais écrit", "il/elle": "aurait écrit", "nous": "aurions écrit", "vous": "auriez écrit", "ils/elles": "auraient écrit" },
-    "impératif présent": { "écris": "écris", "écrivons": "écrivons", "écrivez": "écrivez" },
-    "impératif passé": { "aie écrit": "aie écrit", "ayons écrit": "ayons écrit", "avez écrit": "avez écrit" }
+    "présent": { "je": "rentre", "tu": "rentres", "il/elle": "rentre", "nous": "rentrons", "vous": "rentriez", "ils/elles": "rentrent" },
+    "imparfait": { "je": "rentrais", "tu": "rentrais", "il/elle": "rentrait", "nous": "rentrions", "vous": "rentriez", "ils/elles": "rentraient" },
+    "futur": { "je": "rentrerai", "tu": "rentreras", "il/elle": "rentrera", "nous": "rentrerons", "vous": "rentrerez", "ils/elles": "rentreront" },
+    "passé composé": { "j'": " suis rentré", "tu": " es rentré", "il/elle": " est rentré", "nous": " sommes rentrés", "vous": " êtes rentrés", "ils/elles": " sont rentrés" },
+    "plus-que-parfait": { "j'": "étais rentré", "tu": "étais rentré", "il/elle": "était rentré", "nous": "étions rentrés", "vous": "étiez rentrés", "ils/elles": "étaient rentrés" },
+    "passé simple": { "je": "rentris", "tu": "rentris", "il/elle": "rentra", "nous": "rentrâmes", "vous": "rentrâtes", "ils/elles": "rentrèrent" },
+    "passé antérieur": { "j'": "eus rentré", "tu": "eus rentré", "il/elle": "eut rentré", "nous": "eûmes rentrés", "vous": "eûtes rentrés", "ils/elles": "eurent rentrés" },
+    "futur antérieur": { "j'": "aurai rentré", "tu": "auras rentré", "il/elle": "aura rentré", "nous": "aurons rentrés", "vous": "aurez rentrés", "ils/elles": "auront rentrés" },
+    "subjonctif présent": { "que je": "rentr", "que tu": "rentr", "qu'il/elle": "rentr", "que nous": "rentrions", "que vous": "rentriez", "qu'ils/elles": "rentrent" },
+    "subjonctif imparfait": { "que je": "rentrisse", "que tu": "rentrisses", "qu'il/elle": "rentrît", "que nous": "rentrissions", "que vous": "rentrissiez", "qu'ils/elles": "rentrissent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse rentré", "que tu": "eusses rentré", "qu'il/elle": "eût rentré", "que nous": "eussions rentrés", "que vous": "eussiez rentrés", "qu'ils/elles": "eussent rentrés" },
+    "conditionnel présent": { "je": "rentrerais", "tu": "rentrerais", "il/elle": "rentrerait", "nous": "rentrerions", "vous": "rentriez", "ils/elles": "rentreraient" },
+    "conditionnel passé": { "j'": "aurais rentré", "tu": "aurais rentré", "il/elle": "aurait rentré", "nous": "aurions rentrés", "vous": "auriez rentrés", "ils/elles": "auraient rentrés" },
+    "impératif présent": { "rentre": "rentre", "rentrons": "rentrons", "rentriez": "rentriez" },
+    "impératif passé": { "aie rentré": "aie rentré", "ayons rentrés": "ayons rentrés", "avez rentrés": "avez rentrés" }
   }
 };
 
@@ -118,7 +118,17 @@ export default {
   savoir,
   être,
   avoir,
- prendre,
+  prendre,
   lire,
-  écrire
+  écrire,
+  appeler,
+  manger,
+  boire,
+  sortir,
+  acheter,
+  vendre,
+  essayer,
+  arriver,
+  partir,
+  rentrer
 };

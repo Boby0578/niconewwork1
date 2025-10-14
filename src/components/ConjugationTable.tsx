@@ -10,14 +10,29 @@ interface ConjugationTableProps {
 }
 
 const ConjugationTable: React.FC<ConjugationTableProps> = ({ verb }) => {
-  const handleSpeak = (pronoun: string, value: string) => {
-    let textToSpeak = '';
-    if (pronoun === 'il/elle') {
-      textToSpeak = `il ${value}, elle ${value}`;
-    } else if (pronoun === 'ils/elles') {
-      textToSpeak = `ils ${value}, elles ${value}`;
+  const handleSpeak = (pronoun: string, value: string, tense: string) => {
+    let textToSpeak = value;
+
+    if (tense.toLowerCase().includes('subjonctif')) {
+      if (pronoun === 'il/elle') {
+        // La valeur est "qu'il...", nous devons générer "qu'elle..."
+        const elleValue = value.replace("qu'il", "qu'elle");
+        textToSpeak = `${value}, ${elleValue}`;
+      } else if (pronoun === 'ils/elles') {
+        // La valeur est "qu'ils...", nous devons générer "qu'elles..."
+        const ellesValue = value.replace("qu'ils", "qu'elles");
+        textToSpeak = `${value}, ${ellesValue}`;
+      }
+      // Pour les autres pronoms comme "je", "tu", la valeur est déjà la phrase complète "que je...", donc nous l'utilisons simplement.
     } else {
-      textToSpeak = `${pronoun} ${value}`;
+      // Logique pour les autres temps
+      if (pronoun === 'il/elle') {
+        textToSpeak = `il ${value}, elle ${value}`;
+      } else if (pronoun === 'ils/elles') {
+        textToSpeak = `ils ${value}, elles ${value}`;
+      } else {
+        textToSpeak = `${pronoun} ${value}`;
+      }
     }
     speak(textToSpeak);
   };
@@ -47,7 +62,7 @@ const ConjugationTable: React.FC<ConjugationTableProps> = ({ verb }) => {
                         <li key={pronoun} className="flex justify-between items-center py-2 border-b border-gray-200/80 last:border-b-0 text-lg">
                         <span className="w-1/4 font-semibold">{pronoun}</span>
                         <span className="flex-grow text-left">{value}</span>
-                        <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleSpeak(pronoun, value as string)}>
+                        <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleSpeak(pronoun, value as string, tense)}>
                             <Volume2 className="h-5 w-5 text-cyan-600" />
                         </Button>
                         </li>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mic, Volume2, X, Pencil } from 'lucide-react';
+import { Mic, Volume2, X, Pencil, Smartphone, Tablet, Settings } from 'lucide-react';
 import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
@@ -22,6 +22,7 @@ const Game = () => {
   const [currentQuestion, setCurrentQuestion] = useState<Question | null>(null);
   const [isListening, setIsListening] = useState(false);
   const [showConjugation, setShowConjugation] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
 
   const generateQuestion = () => {
     setShowConjugation(false);
@@ -44,8 +45,19 @@ const Game = () => {
   const { verb, tense, pronoun } = currentQuestion;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 text-gray-700">
-        <div className="w-full max-w-4xl mx-auto">
+    <div className="min-h-screen flex flex-col items-center justify-start pt-6 p-4 text-gray-700">
+        <div className={cn("w-full mx-auto flex justify-between items-center mb-4 px-2 md:px-0 transition-all duration-300", isMobileView ? "max-w-sm" : "max-w-4xl")}>
+            <Button variant="outline" size="icon" onClick={() => setIsMobileView(!isMobileView)} className="bg-white/60 backdrop-blur-sm rounded-full shadow-md border-gray-300 hover:bg-white/80">
+                {isMobileView 
+                    ? <Tablet className="h-5 w-5 text-gray-700" /> 
+                    : <Smartphone className="h-5 w-5 text-gray-700" />}
+            </Button>
+            <Button variant="outline" size="icon" className="bg-white/60 backdrop-blur-sm rounded-full shadow-md border-gray-300 hover:bg-white/80">
+                <Settings className="h-5 w-5 text-gray-700" />
+            </Button>
+        </div>
+
+        <div className={cn("w-full mx-auto transition-all duration-300", isMobileView ? "max-w-sm" : "max-w-4xl")}>
             <Card className="w-full bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 md:p-8">
                 <CardContent className="p-0">
                     <div className="flex justify-between items-start mb-8">

@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mic, Volume2, X, Pencil } from 'lucide-react';
+import { Volume2, X, Pencil } from 'lucide-react';
 import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
+import NewMicrophoneIcon from '@/components/icons/NewMicrophoneIcon';
 
 interface Question {
   verb: Verb;
@@ -81,7 +82,7 @@ const Game = () => {
                                 )}
                                 onClick={() => setIsListening(!isListening)}
                             >
-                                <Mic className="h-20 w-20 text-white" />
+                                <NewMicrophoneIcon className="h-24 w-24 text-white" />
                             </Button>
                             <p className="mt-4 text-lg">{isListening ? "..." : "Appuyez pour parler"}</p>
                         </div>

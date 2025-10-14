@@ -1,17 +1,148 @@
 import { Verb } from '../../verbs';
 
-// This is a placeholder file for a verb.
-// To add a verb, replace 'null' with a verb object.
-// Example:
-//
-// const verb: Verb = {
-//   name: "chanter",
-//   conjugations: {
-//     "présent": { "je": "chante", "tu": "chantes", "il/elle": "chante", "nous": "chantons", "vous": "chantez", "ils/elles": "chantent" },
-//     "futur": { "je": "chanterai", "tu": "chanteras", "il/elle": "chantera", "nous": "chanterons", "vous": "chanterez", "ils/elles": "chanteront" },
-//   },
-// };
-//
-// export default verb;
+const pouvoir: Verb = {
+  name: "pouvoir",
+  conjugations: {
+    "indicatif présent": { "je": "peux", "tu": "peux", "il/elle": "peut", "nous": "pouvons", "vous": "pouvez", "ils/elles": "peuvent" },
+    "indicatif imparfait": { "je": "pouvais", "tu": "pouvais", "il/elle": "pouvait", "nous": "pouvions", "vous": "pouviez", "ils/elles": "pouvaient" },
+    "indicatif passé simple": { "je": "pus", "tu": "pus", "il/elle": "put", "nous": "pûmes", "vous": "pûtes", "ils/elles": "purent" },
+    "indicatif futur simple": { "je": "pourrai", "tu": "pourras", "il/elle": "pourra", "nous": "pourrons", "vous": "pourrez", "ils/elles": "pourront" },
+    "indicatif passé composé": { "je": "ai pu", "tu": "as pu", "il/elle": "a pu", "nous": "avons pu", "vous": "avez pu", "ils/elles": "ont pu" },
+    "indicatif plus-que-parfait": { "je": "avais pu", "tu": "avais pu", "il/elle": "avait pu", "nous": "avions pu", "vous": "aviez pu", "ils/elles": "avaient pu" },
+    "indicatif passé antérieur": { "je": "eus pu", "tu": "eus pu", "il/elle": "eut pu", "nous": "eûmes pu", "vous": "eûtes pu", "ils/elles": "eurent pu" },
+    "indicatif futur antérieur": { "je": "aurai pu", "tu": "auras pu", "il/elle": "aura pu", "nous": "aurons pu", "vous": "aurez pu", "ils/elles": "auront pu" },
+    "subjonctif présent": { "je": "que je puisse", "tu": "que tu puisses", "il/elle": "qu'il puisse", "nous": "que nous puissions", "vous": "que vous puissiez", "ils/elles": "qu'ils puissent" },
+    "subjonctif imparfait": { "je": "que je pusse", "tu": "que tu pusses", "il/elle": "qu'il pût", "nous": "que nous pussions", "vous": "que vous pussiez", "ils/elles": "qu'ils pussent" },
+    "subjonctif passé": { "je": "que j'aie pu", "tu": "que tu aies pu", "il/elle": "qu'il ait pu", "nous": "que nous ayons pu", "vous": "que vous ayez pu", "ils/elles": "qu'ils aient pu" },
+    "subjonctif plus-que-parfait": { "je": "que j'eusse pu", "tu": "que tu eusses pu", "il/elle": "qu'il eût pu", "nous": "que nous eussions pu", "vous": "que vous eussiez pu", "ils/elles": "qu'ils eussent pu" },
+    "conditionnel présent": { "je": "pourrais", "tu": "pourrais", "il/elle": "pourrait", "nous": "pourrions", "vous": "pourriez", "ils/elles": "pourraient" },
+    "conditionnel passé première forme": { "je": "aurais pu", "tu": "aurais pu", "il/elle": "aurait pu", "nous": "aurions pu", "vous": "auriez pu", "ils/elles": "auraient pu" },
+    "conditionnel passé deuxième forme": { "je": "eusse pu", "tu": "eusses pu", "il/elle": "eût pu", "nous": "eussions pu", "vous": "eussiez pu", "ils/elles": "eussent pu" },
+    "impératif présent": { "tu": "peux", "nous": "pouvons", "vous": "pouvez" },
+    "impératif passé": { "tu": "aie pu", "nous": "ayons pu", "vous": "ayez pu" },
+    "infinitif présent": "pouvoir",
+    "infinitif passé": "avoir pu",
+    "participe présent": "pouvant",
+    "participe passé": "pu (ayant pu)",
+    "gérondif présent": "en pouvant",
+    "gérondif passé": "en ayant pu",
+  },
+};
 
-export default null;
+const devoir: Verb = {
+  name: "devoir",
+  conjugations: {
+    "indicatif présent": { "je": "dois", "tu": "dois", "il/elle": "doit", "nous": "devons", "vous": "devez", "ils/elles": "doivent" },
+    "indicatif imparfait": { "je": "devais", "tu": "devais", "il/elle": "devait", "nous": "devions", "vous": "deviez", "ils/elles": "devaient" },
+    "indicatif passé simple": { "je": "dus", "tu": "dus", "il/elle": "dut", "nous": "dûmes", "vous": "dûtes", "ils/elles": "durent" },
+    "indicatif futur simple": { "je": "devrai", "tu": "devras", "il/elle": "devra", "nous": "devrons", "vous": "devrez", "ils/elles": "devront" },
+    "indicatif passé composé": { "je": "ai dû", "tu": "as dû", "il/elle": "a dû", "nous": "avons dû", "vous": "avez dû", "ils/elles": "ont dû" },
+    "indicatif plus-que-parfait": { "je": "avais dû", "tu": "avais dû", "il/elle": "avait dû", "nous": "avions dû", "vous": "aviez dû", "ils/elles": "avaient dû" },
+    "indicatif passé antérieur": { "je": "eus dû", "tu": "eus dû", "il/elle": "eut dû", "nous": "eûmes dû", "vous": "eûtes dû", "ils/elles": "eurent dû" },
+    "indicatif futur antérieur": { "je": "aurai dû", "tu": "auras dû", "il/elle": "aura dû", "nous": "aurons dû", "vous": "aurez dû", "ils/elles": "auront dû" },
+    "subjonctif présent": { "je": "que je doive", "tu": "que tu doives", "il/elle": "qu'il doive", "nous": "que nous devions", "vous": "que vous deviez", "ils/elles": "qu'ils doivent" },
+    "subjonctif imparfait": { "je": "que je dusse", "tu": "que tu dusses", "il/elle": "qu'il dût", "nous": "que nous dussions", "vous": "que vous dussiez", "ils/elles": "qu'ils dussent" },
+    "subjonctif passé": { "je": "que j'aie dû", "tu": "que tu aies dû", "il/elle": "qu'il ait dû", "nous": "que nous ayons dû", "vous": "que vous ayez dû", "ils/elles": "qu'ils aient dû" },
+    "subjonctif plus-que-parfait": { "je": "que j'eusse dû", "tu": "que tu eusses dû", "il/elle": "qu'il eût dû", "nous": "que nous eussions dû", "vous": "que vous eussiez dû", "ils/elles": "qu'ils eussent dû" },
+    "conditionnel présent": { "je": "devrais", "tu": "devrais", "il/elle": "devrait", "nous": "devrions", "vous": "devriez", "ils/elles": "devraient" },
+    "conditionnel passé première forme": { "je": "aurais dû", "tu": "aurais dû", "il/elle": "aurait dû", "nous": "aurions dû", "vous": "auriez dû", "ils/elles": "auraient dû" },
+    "conditionnel passé deuxième forme": { "je": "eusse dû", "tu": "eusses dû", "il/elle": "eût dû", "nous": "eussions dû", "vous": "eussiez dû", "ils/elles": "eussent dû" },
+    "impératif présent": { "tu": "dois", "nous": "devons", "vous": "devez" },
+    "impératif passé": { "tu": "aie dû", "nous": "ayons dû", "vous": "ayez dû" },
+    "infinitif présent": "devoir",
+    "infinitif passé": "avoir dû",
+    "participe présent": "devant",
+    "participe passé": "dû (ayant dû)",
+    "gérondif présent": "en devant",
+    "gérondif passé": "en ayant dû",
+  },
+};
+
+const savoir: Verb = {
+  name: "savoir",
+  conjugations: {
+    "indicatif présent": { "je": "sais", "tu": "sais", "il/elle": "sait", "nous": "savons", "vous": "savez", "ils/elles": "savent" },
+    "indicatif imparfait": { "je": "savais", "tu": "savais", "il/elle": "savait", "nous": "savions", "vous": "saviez", "ils/elles": "savaient" },
+    "indicatif passé simple": { "je": "squis", "tu": "squis", "il/elle": "sut", "nous": "sûmes", "vous": "sûtes", "ils/elles": "surent" },
+    "indicatif futur simple": { "je": "saurai", "tu": "sauras", "il/elle": "saura", "nous": "saurons", "vous": "saurez", "ils/elles": "sauront" },
+    "indicatif passé composé": { "je": "ai su", "tu": "as su", "il/elle": "a su", "nous": "avons su", "vous": "avez su", "ils/elles": "ont su" },
+    "indicatif plus-que-parfait": { "je": "avais su", "tu": "avais su", "il/elle": "avait su", "nous": "avions su", "vous": "aviez su", "ils/elles": "avaient su" },
+    "indicatif passé antérieur": { "je": "eus su", "tu": "eus su", "il/elle": "eut su", "nous": "eûmes su", "vous": "eûtes su", "ils/elles": "eurent su" },
+    "indicatif futur antérieur": { "je": "aurai su", "tu": "auras su", "il/elle": "aura su", "nous": "aurons su", "vous": "aurez su", "ils/elles": "auront su" },
+    "subjonctif présent": { "je": "que je sache", "tu": "que tu saches", "il/elle": "qu'il sache", "nous": "que nous sachions", "vous": "que vous sachiez", "ils/elles": "qu'ils sachent" },
+    "subjonctif imparfait": { "je": "que je susse", "tu": "que tu susse", "il/elle": "qu'il sût", "nous": "que nous susssions", "vous": "que vous susssiez", "ils/elles": "qu'ils sussent" },
+    "subjonctif passé": { "je": "que j'aie su", "tu": "que tu aies su", "il/elle": "qu'il ait su", "nous": "que nous ayons su", "vous": "que vous ayez su", "ils/elles": "qu'ils aient su" },
+    "subjonctif plus-que-parfait": { "je": "que j'eusse su", "tu": "que tu eusses su", "il/elle": "qu'il eût su", "nous": "que nous eussions su", "vous": "que vous eussiez su", "ils/elles": "qu'ils eussent su" },
+    "conditionnel présent": { "je": "saurais", "tu": "saurais", "il/elle": "saurait", "nous": "saurions", "vous": "sauriez", "ils/elles": "sauraient" },
+    "conditionnel passé première forme": { "je": "aurais su", "tu": "aurais su", "il/elle": "aurait su", "nous": "aurions su", "vous": "auriez su", "ils/elles": "auraient su" },
+    "conditionnel passé deuxième forme": { "je": "eusse su", "tu": "eusses su", "il/elle": "eût su", "nous": "eussions su", "vous": "eussiez su", "ils/elles": "eussent su" },
+    "impératif présent": { "tu": "sais", "nous": "savons", "vous": "savez" },
+    "impératif passé": { "tu": "aie su", "nous": "ayons su", "vous": "ayez su" },
+    "infinitif présent": "savoir",
+    "infinitif passé": "avoir su",
+    "participe présent": "sachant",
+    "participe passé": "su (ayant su)",
+    "gérondif présent": "en sachant",
+    "gérondif passé": "en ayant su",
+  },
+};
+
+const vouloir: Verb = {
+  name: "vouloir",
+  conjugations: {
+    "indicatif présent": { "je": "veux", "tu": "veux", "il/elle": "veut", "nous": "voulons", "vous": "voulez", "ils/elles": "veulent" },
+    "indicatif imparfait": { "je": "voulais", "tu": "voulais", "il/elle": "voulait", "nous": "voulions", "vous": "vouliez", "ils/elles": "voulaient" },
+    "indicatif passé simple": { "je": "voulus", "tu": "voulus", "il/elle": "voulut", "nous": "voulûmes", "vous": "voulûtes", "ils/elles": "voulurent" },
+    "indicatif futur simple": { "je": "voudrai", "tu": "voudras", "il/elle": "voudra", "nous": "voudrons", "vous": "voudrez", "ils/elles": "voudront" },
+    "indicatif passé composé": { "je": "ai voulu", "tu": "as voulu", "il/elle": "a voulu", "nous": "avons voulu", "vous": "avez voulu", "ils/elles": "ont voulu" },
+    "indicatif plus-que-parfait": { "je": "avais voulu", "tu": "avais voulu", "il/elle": "avait voulu", "nous": "avions voulu", "vous": "aviez voulu", "ils/elles": "avaient voulu" },
+    "indicatif passé antérieur": { "je": "eus voulu", "tu": "eus voulu", "il/elle": "eut voulu", "nous": "eûmes voulu", "vous": "eûtes voulu", "ils/elles": "eurent voulu" },
+    "indicatif futur antérieur": { "je": "aurai voulu", "tu": "auras voulu", "il/elle": "aura voulu", "nous": "aurons voulu", "vous": "aurez voulu", "ils/elles": "auront voulu" },
+    "subjonctif présent": { "je": "que je veuille", "tu": "que tu veuilles", "il/elle": "qu'il veuille", "nous": "que nous voulions", "vous": "que vous vouliez", "ils/elles": "qu'ils veuillent" },
+    "subjonctif imparfait": { "je": "que je voulusse", "tu": "que tu voulusses", "il/elle": "qu'il voulût", "nous": "que nous voulussions", "vous": "que vous voulussiez", "ils/elles": "qu'ils voulussent" },
+    "subjonctif passé": { "je": "que j'aie voulu", "tu": "que tu aies voulu", "il/elle": "qu'il ait voulu", "nous": "que nous ayons voulu", "vous": "que vous ayez voulu", "ils/elles": "qu'ils aient voulu" },
+    "subjonctif plus-que-parfait": { "je": "que j'eusse voulu", "tu": "que tu eusses voulu", "il/elle": "qu'il eût voulu", "nous": "que nous eussions voulu", "vous": "que vous eussiez voulu", "ils/elles": "qu'ils eussent voulu" },
+    "conditionnel présent": { "je": "voudrais", "tu": "voudrais", "il/elle": "voudrait", "nous": "voudrions", "vous": "voudriez", "ils/elles": "voudraient" },
+    "conditionnel passé première forme": { "je": "aurais voulu", "tu": "aurais voulu", "il/elle": "aurait voulu", "nous": "aurions voulu", "vous": "auriez voulu", "ils/elles": "auraient voulu" },
+    "conditionnel passé deuxième forme": { "je": "eusse voulu", "tu": "eusses voulu", "il/elle": "eût voulu", "nous": "eussions voulu", "vous": "eussiez voulu", "ils/elles": "eussent voulu" },
+    "impératif présent": { "tu": "veux", "nous": "voulons", "vous": "voulez" },
+    "impératif passé": { "tu": "aie voulu", "nous": "ayons voulu", "vous": "ayez voulu" },
+    "infinitif présent": "vouloir",
+    "infinitif passé": "avoir voulu",
+    "participe présent": "voulant",
+    "participe passé": "voulu (ayant voulu)",
+    "gérondif présent": "en voulant",
+    "gérondif passé": "en ayant voulu",
+  },
+};
+
+const venir: Verb = {
+  name: "venir",
+  conjugations: {
+    "indicatif présent": { "je": "viens", "tu": "viens", "il/elle": "vient", "nous": "venons", "vous": "venez", "ils/elles": "viennent" },
+    "indicatif imparfait": { "je": "venais", "tu": "venais", "il/elle": "venait", "nous": "venions", "vous": "veniez", "ils/elles": "venaient" },
+    "indicatif passé simple": { "je": "vins", "tu": "vins", "il/elle": "vint", "nous": "vinmes", "vous": "vintes", "ils/elles": "vinrent" },
+    "indicatif futur simple": { "je": "viendrai", "tu": "viendras", "il/elle": "viendra", "nous": "viendrons", "vous": "viendrez", "ils/elles": "viendront" },
+    "indicatif passé composé": { "je": "suis venu", "tu": "es venu", "il/elle": "est venu", "nous": "sommes venus", "vous": "êtes venus", "ils/elles": "sont venus" },
+    "indicatif plus-que-parfait": { "je": "étais venu", "tu": "étais venu", "il/elle": "était venu", "nous": "étions venus", "vous": "étiez venus", "ils/elles": "étaient venus" },
+    "indicatif passé antérieur": { "je": "fus venu", "tu": "fus venu", "il/elle": "fut venu", "nous": "fûmes venus", "vous": "fûtes venus", "ils/elles": "furent venus" },
+    "indicatif futur antérieur": { "je": "serai venu", "tu": "seras venu", "il/elle": "sera venu", "nous": "serons venus", "vous": "serez venus", "ils/elles": "seront venus" },
+    "subjonctif présent": { "je": "que je vienne", "tu": "que tu viennes", "il/elle": "qu'il vienne", "nous": "que nous venions", "vous": "que vous veniez", "ils/elles": "qu'ils viennent" },
+    "subjonctif imparfait": { "je": "que je vinssse", "tu": "que tu vinsses", "il/elle": "qu'il vinît", "nous": "que nous vinssions", "vous": "que vous vinssiez", "ils/elles": "qu'ils vinissent" },
+    "subjonctif passé": { "je": "que je sois venu", "tu": "que tu sois venu", "il/elle": "qu'il soit venu", "nous": "que nous soyons venus", "vous": "que vous soyez venus", "ils/elles": "qu'ils soient venus" },
+    "subjonctif plus-que-parfait": { "je": "que j'eusse venu", "tu": "que tu eusses venu", "il/elle": "qu'il eût venu", "nous": "que nous eussions venus", "vous": "que vous eussiez venus", "ils/elles": "qu'ils eussent venus" },
+    "conditionnel présent": { "je": "viendrais", "tu": "viendrais", "il/elle": "viendrait", "nous": "viendrions", "vous": "viendriez", "ils/elles": "viendraient" },
+    "conditionnel passé première forme": { "je": "serais venu", "tu": "serais venu", "il/elle": "serait venu", "nous": "serions venus", "vous": "seriez venus", "ils/elles": "seraient venus" },
+    "conditionnel passé deuxième forme": { "je": "eusse venu", "tu": "eusses venu", "il/elle": "eût venu", "nous": "eussions venus", "vous": "eussiez venus", "ils/elles": "eussent venus" },
+    "impératif présent": { "tu": "viens", "nous": "venons", "vous": "venez" },
+    "impératif passé": { "tu": "sois venu", "nous": "soyons venus", "vous": "soyez venus" },
+    "infinitif présent": "venir",
+    "infinitif passé": "être venu",
+    "participe présent": "venant",
+    "participe passé": "venu (ayant venu)",
+    "gérondif présent": "en venant",
+    "gérondif passé": "en étant venu",
+  },
+};
+
+export default { pouvoir, devoir, savoir, vouloir, venir };

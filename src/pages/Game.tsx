@@ -64,12 +64,11 @@ const Game = () => {
                     </div>
 
                     <div className="flex-grow flex flex-col items-center justify-center py-6">
-                        <Button
-                            size="icon"
-                            className="h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-orange-500 hover:bg-orange-600 shadow-lg transition-all duration-300"
+                        <div
+                            className="h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-orange-400 hover:bg-orange-500 active:bg-red-600 shadow-lg transition-all duration-300 flex items-center justify-center cursor-pointer"
                         >
                             <Mic className="h-24 w-24 sm:h-32 sm:w-32 text-white" />
-                        </Button>
+                        </div>
                         <p className="mt-4 text-xl font-semibold text-gray-600">
                             Appuyez pour parler
                         </p>

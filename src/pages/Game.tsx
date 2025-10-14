@@ -140,7 +140,7 @@ const Game = () => {
                                 {/* Left spacer */}
                             </div>
 
-                            <div className="px-4">
+                            <div className="px-4 w-full">
                                 {inputMode === 'voice' ? (
                                     <div className="flex flex-col items-center">
                                         <div
@@ -153,18 +153,18 @@ const Game = () => {
                                         </p>
                                     </div>
                                 ) : (
-                                    <div className="w-full max-w-md flex flex-col items-center gap-4">
+                                    <div className="w-full max-w-lg flex flex-col items-center gap-4">
                                         <p className="text-xl font-semibold text-gray-600 mb-2">
                                             Écrivez votre réponse
                                         </p>
                                         <Input
                                             type="text"
                                             placeholder="Votre réponse..."
-                                            className="text-center text-2xl h-16"
+                                            className="text-center text-2xl h-16 w-full"
                                             value={textAnswer}
                                             onChange={(e) => setTextAnswer(e.target.value)}
                                         />
-                                        <Button size="lg" className="text-xl px-10 py-6">Valider</Button>
+                                        <Button size="lg" className="w-full text-xl px-10 py-6 bg-green-500 hover:bg-green-600">Valider</Button>
                                     </div>
                                 )}
                             </div>

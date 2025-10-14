@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Smartphone, Tablet, Settings } from 'lucide-react';
+import { showError, showSuccess } from "@/utils/toast";
 
 const Index = () => {
   const [name, setName] = useState("");
@@ -20,14 +21,20 @@ const Index = () => {
   }, []);
 
   const handleSaveName = () => {
+    if (!name.trim()) {
+      showError("Veuillez entrer un nom à sauvegarder.");
+      return;
+    }
     localStorage.setItem("conjugaison-username", name);
-    // TODO: Add a toast notification for confirmation
+    showSuccess("Nom sauvegardé !");
   };
 
   const startGame = () => {
-    if (name) {
-      handleSaveName();
+    if (!name.trim()) {
+      showError("Veuillez entrer votre nom pour commencer.");
+      return;
     }
+    localStorage.setItem("conjugaison-username", name);
     navigate("/game", { state: { level, time, name, isMobileView } });
   };
 

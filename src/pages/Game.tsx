@@ -124,16 +124,15 @@ const Game = () => {
     }
 
     if (correctAnswer) {
-        setRevealedAnswer(correctAnswer);
-
-        let textToSpeak = `${pronoun} ${correctAnswer}`;
+        let textToDisplayAndSpeak = `${pronoun} ${correctAnswer}`;
         if (tense.includes('subjonctif')) {
-            textToSpeak = correctAnswer;
+            textToDisplayAndSpeak = correctAnswer;
         } else if (pronoun === 'je' && ['a', 'e', 'i', 'o', 'u', 'h'].includes(correctAnswer.charAt(0).toLowerCase())) {
-            textToSpeak = `j'${correctAnswer}`;
+            textToDisplayAndSpeak = `j'${correctAnswer}`;
         }
         
-        speak(`La bonne réponse est : ${textToSpeak}`);
+        setRevealedAnswer(textToDisplayAndSpeak);
+        speak(`La bonne réponse est : ${textToDisplayAndSpeak}`);
 
         setTimeout(() => {
             generateQuestion();

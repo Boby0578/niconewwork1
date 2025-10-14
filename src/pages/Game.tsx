@@ -58,13 +58,13 @@ const Game = () => {
                         </div>
                     </div>
 
-                    <div className="text-center my-8 min-h-[100px] flex items-center justify-center">
+                    <div className="text-center my-12 min-h-[120px] flex items-center justify-center">
                         <p className="text-2xl md:text-4xl font-bold leading-tight">
                             Conjugue le verbe <span className="text-orange-600">{verb.name}</span> {getTensePreposition(tense)}<span className="text-green-600">{tense}</span>, à la <span className="text-blue-600">{getPronounText(pronoun)}</span> {getPronounHint(pronoun)}
                         </p>
                     </div>
 
-                    <div className="relative flex justify-center items-center my-16">
+                    <div className="relative flex justify-center items-center my-20">
                         <div className="absolute left-0">
                             <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">
                                 <Volume2 className="h-7 w-7 text-gray-600" />
@@ -74,14 +74,14 @@ const Game = () => {
                             <Button 
                                 size="icon" 
                                 className={cn(
-                                    "rounded-full h-32 w-32 shadow-lg transition-all duration-300",
+                                    "rounded-full h-40 w-40 shadow-lg transition-all duration-300",
                                     isListening 
                                     ? "bg-gradient-to-br from-red-500 to-red-600 scale-110"
                                     : "bg-gradient-to-br from-yellow-400 to-orange-500"
                                 )}
                                 onClick={() => setIsListening(!isListening)}
                             >
-                                <Mic className="h-16 w-16 text-white" />
+                                <Mic className="h-20 w-20 text-white" />
                             </Button>
                             <p className="mt-4 text-lg">{isListening ? "..." : "Appuyez pour parler"}</p>
                         </div>

@@ -64,7 +64,7 @@ const Game = () => {
                         </p>
                     </div>
 
-                    <div className="relative flex justify-center items-center my-20">
+                    <div className="relative flex justify-center items-center my-24">
                         <div className="absolute left-0">
                             <Button variant="outline" size="icon" className="rounded-full h-14 w-14 bg-white/50 shadow-md">
                                 <Volume2 className="h-7 w-7 text-gray-600" />
@@ -74,7 +74,7 @@ const Game = () => {
                             <Button 
                                 size="icon" 
                                 className={cn(
-                                    "rounded-full h-40 w-40 shadow-lg transition-all duration-300",
+                                    "rounded-full h-32 w-32 shadow-lg transition-all duration-300",
                                     isListening 
                                     ? "bg-gradient-to-br from-red-500 to-red-600 scale-110"
                                     : "bg-gradient-to-br from-yellow-400 to-orange-500"

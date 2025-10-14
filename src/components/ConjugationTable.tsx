@@ -10,6 +10,18 @@ interface ConjugationTableProps {
 }
 
 const ConjugationTable: React.FC<ConjugationTableProps> = ({ verb }) => {
+  const handleSpeak = (pronoun: string, value: string) => {
+    let textToSpeak = '';
+    if (pronoun === 'il/elle') {
+      textToSpeak = `il ${value}, elle ${value}`;
+    } else if (pronoun === 'ils/elles') {
+      textToSpeak = `ils ${value}, elles ${value}`;
+    } else {
+      textToSpeak = `${pronoun} ${value}`;
+    }
+    speak(textToSpeak);
+  };
+
   return (
     <div className="mt-8">
         <Card className="bg-white/80 border-t-4 border-yellow-400 rounded-xl">
@@ -35,7 +47,7 @@ const ConjugationTable: React.FC<ConjugationTableProps> = ({ verb }) => {
                         <li key={pronoun} className="flex justify-between items-center py-2 border-b border-gray-200/80 last:border-b-0 text-lg">
                         <span className="w-1/4 font-semibold">{pronoun}</span>
                         <span className="flex-grow text-left">{value}</span>
-                        <Button variant="ghost" size="icon" className="rounded-full" onClick={() => speak(`${pronoun}, ${value}`)}>
+                        <Button variant="ghost" size="icon" className="rounded-full" onClick={() => handleSpeak(pronoun, value as string)}>
                             <Volume2 className="h-5 w-5 text-cyan-600" />
                         </Button>
                         </li>

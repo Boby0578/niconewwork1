@@ -36,3 +36,8 @@ export const getAllVerbs = async (): Promise<Verb[]> => {
 
     return uniqueVerbs;
 }
+
+export const getExistingVerbs = async (): Promise<string[]> => {
+    const allVerbs = await getAllVerbs();
+    return allVerbs.map(verb => verb.name);
+}

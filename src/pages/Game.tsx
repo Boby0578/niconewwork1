@@ -6,6 +6,7 @@ import { X } from 'lucide-react';
 import { verbs, pronouns, getTensePreposition, getPronounText, getPronounHint, Verb, Tense, Pronoun } from '@/data/verbs';
 import { cn } from '@/lib/utils';
 import ConjugationTable from '@/components/ConjugationTable';
+import NewMicrophoneIcon from '@/components/icons/NewMicrophoneIcon';
 
 interface Question {
   verb: Verb;
@@ -57,13 +58,26 @@ const Game = () => {
                         </div>
                     </div>
 
-                    <div className="text-center flex-grow flex items-start justify-center pt-8 md:pt-16">
+                    <div className="text-center pt-4 md:pt-8">
                         <p className="text-2xl md:text-4xl font-bold leading-tight">
                             Conjugue le verbe <span className="text-orange-600">{verb.name}</span> {getTensePreposition(tense)}<span className="text-green-600">{tense}</span>, à la <span className="text-blue-600">{getPronounText(pronoun)}</span> {getPronounHint(pronoun)}
                         </p>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-auto mb-8">
+                    <div className="flex-grow flex flex-col items-center justify-center py-6">
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            className="h-32 w-32 sm:h-40 sm:w-40 rounded-full bg-white/50 shadow-lg border-4 border-gray-300 hover:border-cyan-400 hover:bg-white/80 transition-all duration-300"
+                        >
+                            <NewMicrophoneIcon className="h-20 w-20 sm:h-24 sm:w-24 text-gray-500 transition-colors" />
+                        </Button>
+                        <p className="mt-4 text-xl font-semibold text-gray-600">
+                            Appuyez pour parler
+                        </p>
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
                         <Button className="bg-green-400 hover:bg-green-500 text-white rounded-full text-lg py-3 px-8">Révéler la réponse</Button>
                         <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full text-lg py-3 px-8" onClick={generateQuestion}>Question suivante</Button>
                         <Button className="bg-purple-500 hover:bg-purple-600 text-white rounded-full text-lg py-3 px-8" onClick={() => setShowConjugation(!showConjugation)}>

@@ -127,7 +127,7 @@ const Game = () => {
 
                     <div className="text-center pt-4 md:pt-8">
                         <p className="text-2xl md:text-4xl font-bold leading-tight">
-                            Conjugue le verbe <span className="text-orange-600">{verb.name}</span> {getTensePreposition(tense)}<span className="text-green-600">{tense}</span>, à la <span className="text-blue-600">{getPronounText(pronoun)}</span> {getPronounHint(pronoun)}
+                            Conjugue le verbe <span className="text-orange-600">{verb.name}</span> {getTensePreposition(tense)}<span className="text-green-600">{tense}</span>, à la <span className="text-blue-600">{getPronounText(pronoun)}</span> <span className="text-gray-500 text-2xl">{getPronounHint(pronoun)}</span>
                         </p>
                     </div>
 

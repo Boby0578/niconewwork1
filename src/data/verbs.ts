@@ -1,119 +1,72 @@
-import { Verb } from '../../verbs';
+export type Pronoun = "je" | "tu" | "il/elle" | "nous" | "vous" | "ils/elles";
 
-const manger: Verb = {
-  name: "manger",
-  conjugations: {
-    "indicatif présent": { "je": "mange", "tu": "manges", "il/elle": "mange", "nous": "mangeons", "vous": "mangez", "ils/elles": "mangent" },
-    "indicatif imparfait": { "je": "mangeais", "tu": "mangeais", "il/elle": "mangeait", "nous": "mangeions", "vous": "mangeiez", "ils/elles": "mangeaient" },
-    "indicatif passé simple": { "je": "mangeai", "tu": "mangeas", "il/elle": "mange", "nous": "mangeâmes", "vous": "mangeâtes", "ils/elles": "mangeèrent" },
-    "indicatif futur simple": { "je": "mangerai", "tu": "mangeras", "il/elle": "mangera", "nous": "mangerons", "vous": "mangez", "ils/elles": "mangeront" },
-    "indicatif passé composé": { "je": "ai mangé", "tu": "as mangé", "il/elle": "a mangé", "nous": "avons mangé", "vous": "avez mangé", "ils/elles": "ont mangé" },
-    "indicatif plus-que-parfait": { "je": "avais mangé", "tu": "avais mangé", "il/elle": "avait mangé", "nous": "avions mangé", "vous": "aviez mangé", "ils/elles": "avaient mangé" },
-    "indicatif passé antérieur": { "je": "eus mangé", "tu": "eus mangé", "il/elle": "eut mangé", "nous": "eûmes mangé", "vous": "eûtes mangé", "ils/elles": "eurent mangé" },
-    "indicatif futur antérieur": { "je": "aurai mangé", "tu": "auras mangé", "il/elle": "aura mangé", "nous": "aurons mangé", "vous": "aurez mangé", "ils/elles": "auront mangé" },
-    "subjonctif présent": { "je": "que je mange", "tu": "que tu manges", "il/elle": "qu'il mange", "nous": "que nous mangions", "vous": "que vous mangiez", "ils/elles": "qu'ils mangent" },
-    "subjonctif imparfait": { "je": "que je fusse", "tu": "que tu fusses", "il/elle": "qu'il fût", "nous": "que nous fussions", "vous": "que vous fussiez", "ils/elles": "qu'ils fussent" },
-    "subjonctif passé": { "je": "que j'aie mangé", "tu": "que tu aies mangé", "il/elle": "qu'il ait mangé", "nous": "que nous ayons mangé", "vous": "que vous ayez mangé", "ils/elles": "qu'ils aient mangé" },
-    "subjonctof plus-que-parfait": { "je": "que j'eusse mangé", "tu": "que tu eusses mangé", "il/elle": "qu'il eût mangé", "nous": "que nous eussions mangé", "vous": "que vous eussiez mangé", "ils/elles": "qu'ils eussent mangé" },
-    "conditionnel présent": { "je": "mangeais", "tu": "mangeais", "il/elle": "mangeait", "nous": "mangeions", "vous": "mangeiez", "ils/elles": "mangeaient" },
-    "conditionnel passé première forme": { "je": "aurais mangé", "tu": "aurais mangé", "il/elle": "aurait mangé", "nous": "aurions mangé", "vous": "auriez mangé", "ils/elles": "auraient mangé" },
-    "conditionnel passé deuxième forme": { "je": "eusse mangé", "tu": "eusses mangé", "il/elle": "eût mangé", "nous": "eussions mangé", "vous": "eussiez mangé", "ils/elles": "eussent mangé" },
-    "impératif présent": { "tu": "mange", "nous": "mangeons", "vous": "mangez" },
-    "impératif passé": { "tu": "aie mangé", "nous": "ayons mangé", "vous": "ayez mangé" },
-    "infinitif présent": "manger",
-    "infinitif passé": "avoir mangé",
-    "participe présent": "mangent",
-    "participe passé": "mangé (ayant mangé)",
-    "gérondif présent": "en mangeant",
-    "gérondif passé": "en ayant mangé",
-  },
+export const pronouns: Pronoun[] = ["je", "tu", "il/elle", "nous", "vous", "ils/elles"];
+
+export type Tense =
+  | "indicatif présent"
+  | "indicatif imparfait"
+  | "indicatif passé simple"
+  | "indicatif futur simple"
+  | "indicatif passé composé"
+  | "indicatif plus-que-parfait"
+  | "indicatif passé antérieur"
+  | "indicatif futur antérieur"
+  | "subjonctif présent"
+  | "subjonctif imparfait"
+  | "subjonctif passé"
+  | "subjonctif plus-que-parfait"
+  | "conditionnel présent"
+  | "conditionnel passé première forme"
+  | "conditionnel passé deuxième forme"
+  | "impératif présent"
+  | "impératif passé"
+  | "infinitif présent"
+  | "infinitif passé"
+  | "participe présent"
+  | "participe passé"
+  | "gérondif présent"
+  | "gérondif passé";
+
+export type Conjugation = {
+  [key in Pronoun]?: string;
 };
 
-const boire: Verb = {
-  name: "boire",
+export type Verb = {
+  name: string;
   conjugations: {
-    "indicatif présent": { "je": "bois", "tu": "bois", "il/elle": "boit", "nous": "buons", "vous": "buvez", "ils/elles": "boivent" },
-    "indicatif imparfait": { "je": "buais", "tu": "buais", "il/elle": "buait", "nous": "buions", "vous": "buiez", "ils/elles": "buient" },
-    "indicatif passé simple": { "je": "buis", "tu": "buis", "il/elle": "but", "nous": "buîmes", "vous": "buîtes", "ils/elles": "buirent" },
-    "indicatif futur simple": { "je": "boirai", "tu": "boiras", "il/elle": "boira", "nous": "boirons", "vous": "boirez", "ils/elles": "boiront" },
-    "indicatif passé composé": { "je": "ai bu", "tu": "as bu", "il/elle": "a bu", "nous": "avons bu", "vous": "avez bu", "ils/elles": "ont bu" },
-    "indicatif plus-que-parfait": { "je": "avais bu", "tu": "avais bu", "il/elle": "avait bu", "nous": "avions bu", "vous": "aviez bu", "ils/elles": "avaient bu" },
-    "indicatif passé antérieur": { "je": "eus bu", "tu": "eus bu", "il/elle": "eut bu", "nous": "eûmes bu", "vous": "eûtes bu", "ils/elles": "eurent bu" },
-    "indicatif futur antérieur": { "je": "aurai bu", "tu": "auras bu", "il/elle": "aura bu", "nous": "aurons bu", "vous": "aurez bu", "ils/elles": "auront bu" },
-    "subjonctif présent": { "je": "que je boive", "tu": "que tu boives", "il/elle": "qu'il boive", "nous": "que nous buions", "vous": "que vous buviez", "ils/elles": "qu'ils buient" },
-    "subjonctif imparfait": { "je": "que je buisse", "tu": "que tu buisses", "il/elle": "qu'il buisse", "nous": "que nous buissions", "vous": "que vous buissiez", "ils/elles": "qu'ils buissent" },
-    "subjonctif passé": { "je": "que j'aie bu", "tu": "que tu aies bu", "il/elle": "qu'il ait bu", "nous": "que nous ayons bu", "vous": "que vous ayez bu", "ils/elles": "qu'ils aient bu" },
-    "subjonctof plus-que-parfait": { "je": "que j'eusse bu", "tu": "que tu eusses bu", "il/elle": "qu'il eût bu", "nous": "que nous eussions bu", "vous": "que vous eussiez bu", "ils/elles": "qu'ils eussent bu" },
-    "conditionnel présent": { "je": "boirais", "tu": "boirais", "il/elle": "boirait", "nous": "boirions", "vous": "boiriez", "ils/elles": "boiraient" },
-    "conditionnel passé première forme": { "je": "aurais bu", "tu": "aurais bu", "il/elle": "aurait bu", "nous": "aurions bu", "vous": "auriez bu", "ils/elles": "auraient bu" },
-    "conditionnel passé deuxième forme": { "je": "eusse bu", "tu": "eusses bu", "il/elle": "eût bu", "nous": "eussions bu", "vous": "eussiez bu", "ils/elles": "eussent bu" },
-    "impératif présent": { "tu": "bois", "nous": "buons", "vous": "buvez" },
-    "impératif passé": { "tu": "aie bu", "nous": "ayons bu", "vous": "ayez bu" },
-    "infinitif présent": "boire",
-    "infinitif passé": "avoir bu",
-    "participe présent": "buant",
-    "participe passé": "bu (ayant bu)",
-    "gérondif présent": "en buant",
-    "gérondif passé": "en ayant bu",
-  },
+    [key: string]: Conjugation | string;
+  };
 };
 
-const écrire: Verb = {
-  name: "écrire",
-  conjugations: {
-    "indicatif présent": { "je": "écris", "tu": "écris", "il/elle": "écrit", "nous": "écrivons", "vous": "écrivez", "ils/elles": "écrivent" },
-    "indicatif imparfait": { "je": "écrivais", "tu": "écrivais", "il/elle": "écrivait", "nous": "écrivions", "vous": "écriviez", "ils/elles": "écrivaient" },
-    "indicatif passé simple": { "je": "écrivis", "tu": "écrivis", "il/elle": "écrivit", "nous": "écrivâmes", "vous": "écrivâtes", "ils/elles": "écrivèrent" },
-    "indicatif futur simple": { "je": "écrirai", "tu": "écriras", "il/elle": "écrira", "nous": "écrirons", "vous": "écrirez", "ils/elles": "écriront" },
-    "indicatif passé composé": { "je": "ai écrit", "tu": "as écrit", "il/elle": "a écrit", "nous": "avons écrit", "vous": "avez écrit", "ils/elles": "ont écrit" },
-    "indicatif plus-que-parfait": { "je": "avais écrit", "tu": "avais écrit", "il/elle": "avait écrit", "nous": "avions écrit", "vous": "aviez écrit", "ils/elles": "avaient écrit" },
-    "indicatif passé antérieur": { "je": "eus écrit", "tu": "eus écrit", "il/elle": "eut écrit", "nous": "eûmes écrit", "vous": "eûtes écrit", "ils/elles": "eurent écrit" },
-    "indicatif futur antérieur": { "je": "aurai écrit", "tu": "auras écrit", "il/elle": "aura écrit", "nous": "aurons écrit", "vous": "aurez écrit", "ils/elles": "auront écrit" },
-    "subjonctif présent": { "je": "que je écrive", "tu": "que tu écrives", "il/elle": "qu'il écrive", "nous": "que nous écrivions", "vous": "que vous écriviez", "ils/elles": "qu'ils écrivent" },
-    "subjonctif imparfait": { "je": "que je écrivasse", "tu": "que tu écrivasses", "il/elle": "qu'il écrivasse", "nous": "que nous écrivassions", "vous": "que vous écrivassiez", "ils/elles": "qu'ils écrivassent" },
-    "subjonctif passé": { "je": "que j'aie écrit", "tu": "que tu aies écrit", "il/elle": "qu'il ait écrit", "nous": "que nous ayons écrit", "vous": "que vous ayez écrit", "ils/elles": "qu'ils aient écrit" },
-    "subjonctof plus-que-parfait": { "je": "que j'eusse écrit", "tu": "que tu eusses écrit", "il/elle": "qu'il eût écrit", "nous": "que nous eussions écrit", "vous": "que vous eussiez écrit", "ils/elles": "qu'ils eussent écrit" },
-    "conditionnel présent": { "je": "écrirais", "tu": "écrirais", "il/elle": "écrirait", "nous": "écririons", "vous": "écririez", "ils/elles": "écriraient" },
-    "conditionnel passé première forme": { "je": "aurais écrit", "tu": "aurais écrit", "il/elle": "aurait écrit", "nous": "aurions écrit", "vous": "auriez écrit", "ils/elles": "auraient écrit" },
-    "conditionnel passé deuxième forme": { "je": "eusse écrit", "tu": "eusses écrit", "il/elle": "eût écrit", "nous": "eussions écrit", "vous": "eussiez écrit", "ils/elles": "eussent écrit" },
-    "impératif présent": { "tu": "écris", "nous": "écrivons", "vous": "écrivez" },
-    "impératif passé": { "tu": "aie écrit", "nous": "ayons écrit", "vous": "ayez écrit" },
-    "infinitif présent": "écrire",
-    "infinitif passé": "avoir écrit",
-    "participe présent": "écrivant",
-    "participe passé": "écrit (ayant écrit)",
-    "gérondif présent": "en écrivant",
-    "gérondif passé": "en ayant écrit",
-  },
+export const getTensePreposition = (tense: Tense | string) => {
+  if (tense.startsWith('indicatif') || tense.startsWith('impératif') || tense.startsWith('infinitif')) {
+    return "à l'";
+  }
+  return "au ";
 };
 
-const parler: Verb = {
-  name: "parler",
-  conjugations: {
-    "indicatif présent": { "je": "parle", "tu": "parles", "il/elle": "parle", "nous": "parlons", "vous": "parlez", "ils/elles": "parlent" },
-    "indicatif imparfait": { "je": "parlais", "tu": "parlais", "il/elle": "parlait", "nous": "parlions", "vous": "parliez", "ils/elles": "parlaient" },
-    "indicatif passé simple": { "je": "parlai", "tu": "parlas", "il/elle": "parla", "nous": "parlâmes", "vous": "parlâtes", "ils/elles": "parlèrent" },
-    "indicatif futur simple": { "je": "parlerai", "tu": "parleras", "il/elle": "parlera", "nous": "parlerons", "vous": "parlerez", "ils/elles": "parleront" },
-    "indicatif passé composé": { "je": "ai parlé", "tu": "as parlé", "il/elle": "a parlé", "nous": "avons parlé", "vous": "avez parlé", "ils/elles": "ont parlé" },
-    "indicatif plus-que-parfait": { "je": "avais parlé", "tu": "avais parlé", "il/elle": "avait parlé", "nous": "avions parlé", "vous": "aviez parlé", "ils/elles": "avaient parlé" },
-    "indicatif passé antérieur": { "je": "eus parlé", "tu": "eus parlé", "il/elle": "eut parlé", "nous": "eûmes parlé", "vous": "eûtes parlé", "ils/elles": "eurent parlé" },
-    "indicatif futur antérieur": { "je": "aurai parlé", "tu": "auras parlé", "il/elle": "aura parlé", "nous": "aurons parlé", "vous": "aurez parlé", "ils/elles": "auront parlé" },
-    "subjonctif présent": { "je": "que je parle", "tu": "que tu parles", "il/elle": "qu'il parle", "nous": "que nous parlions", "vous": "que vous parliez", "ils/elles": "qu'ils parlent" },
-    "subjonctif imparfait": { "je": "que je parlassse", "tu": "que tu parlasses", "il/elle": "qu'il parlassse", "nous": "que nous parlassions", "vous": "que vous parlassiez", "ils/elles": "qu'ils parlassent" },
-    "subjonctif passé": { "je": "que j'aie parlé", "tu": "que tu aies parlé", "il/elle": "qu'il ait parlé", "nous": "que nous ayons parlé", "vous": "que vous ayez parlé", "ils/elles": "qu'ils aient parlé" },
-    "subjonctof plus-que-parfait": { "je": "que j'eusse parlé", "tu": "que tu eusses parlé", "il/elle": "qu'il eût parlé", "nous": "que nous eussions parlé", "vous": "que vous eussiez parlé", "ils/elles": "qu'ils eussent parlé" },
-    "conditionnel présent": { "je": "parlerais", "tu": "parlerais", "il/elle": "parlerait", "nous": "parlerions", "vous": "parleriez", "ils/elles": "parleraient" },
-    "conditionnel passé première forme": { "je": "aurais parlé", "tu": "aurais parlé", "il/elle": "aurait parlé", "nous": "aurions parlé", "vous": "auriez parlé", "ils/elles": "auraient parlé" },
-    "conditionnel passé deuxième forme": { "je": "eusse parlé", "tu": "eusses parlé", "il/elle": "eût parlé", "nous": "eussions parlé", "vous": "eussiez parlé", "ils/elles": "eussent parlé" },
-    "impératif présent": { "tu": "parle", "nous": "parlons", "vous": "parlez" },
-    "impératif passé": { "tu": "aie parlé", "nous": "ayons parlé", "vous": "ayez parlé" },
-    "infinitif présent": "parler",
-    "infinitif passé": "avoir parlé",
-    "participe présent": "parlant",
-    "participe passé": "parlé (ayant parlé)",
-    "gérondif présent": "en parlant",
-    "gérondif passé": "en ayant parlé",
-  },
+export const getPronounText = (pronoun: Pronoun) => {
+  switch (pronoun) {
+    case 'je':
+      return 'première personne du singulier';
+    case 'tu':
+      return 'deuxième personne du singulier';
+    case 'il/elle':
+      return 'troisième personne du singulier';
+    case 'nous':
+      return 'première personne du pluriel';
+    case 'vous':
+      return 'deuxième personne du pluriel';
+    case 'ils/elles':
+      return 'troisième personne du pluriel';
+  }
 };
 
-export default { etre, avoir, aller, faire, parler };
+export const getPronounHint = (pronoun: Pronoun) => {
+  if (pronoun === 'il/elle' || pronoun === 'ils/elles') {
+    return `(${pronoun})`;
+  }
+  const text = getPronounText(pronoun);
+  const firstWord = text.split(' ')[0];
+  return `(${firstWord.charAt(0)}ère pers. ${text.includes('singulier') ? 'sing.' : 'plur.'})`;
+};

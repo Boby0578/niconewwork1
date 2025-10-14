@@ -63,7 +63,7 @@ const Game = () => {
                         </p>
                     </div>
 
-                    <div className="flex justify-center flex-wrap gap-4 mt-4 mb-8">
+                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-auto mb-8">
                         <Button className="bg-green-400 hover:bg-green-500 text-white rounded-full text-lg py-3 px-8">Révéler la réponse</Button>
                         <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full text-lg py-3 px-8" onClick={generateQuestion}>Question suivante</Button>
                         <Button className="bg-purple-500 hover:bg-purple-600 text-white rounded-full text-lg py-3 px-8" onClick={() => setShowConjugation(!showConjugation)}>

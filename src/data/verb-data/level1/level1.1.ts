@@ -1,107 +1,107 @@
 import { Verb } from '../../verbs';
 
-export const aller: Verb = {
-  name: "aller",
+export const parler: Verb = {
+  name: "parler",
   conjugations: {
-    "présent": { "je": "vais", "tu": "vas", "il/elle": "va", "nous": "allons", "vous": "allez", "ils/elles": " vont" },
-    "imparfait": { "je": "allais", "tu": "allais", "il/elle": "allait", "nous": "allions", "vous": "alliez", "ils/elles": "allaient" },
-    "futur": { "je": "irai", "tu": "iras", "il/elle": "ira", "nous": "irons", "vous": "irez", "ils/elles": "iront" },
-    "passé composé": { "j'": " suis allé", "tu": " es allé", "il/elle": " est allé", "nous": " sommes allés", "vous": " êtes allés", "ils/elles": " sont allés" },
-    "plus-que-parfait": { "j'": " étais allé", "tu": " étais allé", "il/elle": " était allé", "nous": " étions allés", "vous": " étiez allés", "ils/elles": " étaient allés" },
-    "passé simple": { "je": "allai", "tu": "allas", "il/elle": "alla", "nous": "allâmes", "vous": "allâtes", "ils/elles": "allèrent" },
-    "passé antérieur": { "j'": "eus allé", "tu": "eus allé", "il/elle": "eut allé", "nous": "eûmes allés", "vous": "eûtes allés", "ils/elles": "eurent allés" },
-    "futur antérieur": { "j'": "aurai allé", "tu": "auras allé", "il/elle": "aura allé", "nous": "aurons allés", "vous": "aurez allés", "ils/elles": "auront allés" },
-    "subjonctif présent": { "que je": "aille", "que tu": "ailles", "qu'il/elle": "aille", "que nous": "allions", "que vous": "alliez", "qu'ils/elles": "aillent" },
-    "subjonctif imparfait": { "que je": "allasse", "que tu": "allasses", "qu'il/elle": "allât", "que nous": "allassions", "que vous": "allassiez", "qu'ils/elles": "allassent" },
-    "subjonctif plus-que-parfait": { "que j'": "eusse allé", "que tu": "eusses allé", "qu'il/elle": "eût allé", "que nous": "eussions allés", "que vous": "eussiez allés", "qu'ils/elles": "eussent allés" },
-    "conditionnel présent": { "je": "irais", "tu": "irais", "il/elle": "irait", "nous": "irions", "vous": "iriez", "ils/elles": "iraient" },
-    "conditionnel passé": { "j'": "aurais allé", "tu": "aurais allé", "il/elle": "aurait allé", "nous": "aurions allés", "vous": "auriez allés", "ils/elles": "auraient allés" },
-    "impératif présent": { "va": "va", "venons": "venons", "allez": "allez" },
-    "impératif passé": { "aie allé": "aie allé", "ayons allé": "ayons allé", "avez allé": "avez allé" }
+    "présent": { "je": "parle", "tu": "parles", "il/elle": "parle", "nous": "parlons", "vous": "parlez", "ils/elles": "parlent" },
+    "imparfait": { "je": "parlais", "tu": "parlais", "il/elle": "parlait", "nous": "parlions", "vous": "parliez", "ils/elles": "parlaient" },
+    "futur": { "je": "parlerai", "tu": "parleras", "il/elle": "parlera", "nous": "parlerons", "vous": "parlerez", "ils/elles": "parleront" },
+    "passé composé": { "j'": "ai parlé", "tu": "as parlé", "il/elle": "a parlé", "nous": "avons parlé", "vous": "avez parlé", "ils/elles": "ont parlé" },
+    "plus-que-parfait": { "j'": "avais parlé", "tu": "avais parlé", "il/elle": "avait parlé", "nous": "avions parlé", "vous": "aviez parlé", "ils/elles": "avaient parlé" },
+    "passé simple": { "je": "parlai", "tu": "parlas", "il/elle": "parla", "nous": "parlâmes", "vous": "parlâtes", "ils/elles": "parlèrent" },
+    "passé antérieur": { "j'": "eus parlé", "tu": "eus parlé", "il/elle": "eut parlé", "nous": "eûmes parlé", "vous": "eûtes parlé", "ils/elles": "eurent parlé" },
+    "futur antérieur": { "j'": "aurai parlé", "tu": "auras parlé", "il/elle": "aura parlé", "nous": "aurons parlé", "vous": "aurez parlé", "ils/elles": "auront parlé" },
+    "subjonctif présent": { "que je": "parle", "que tu": "parles", "qu'il/elle": "parle", "que nous": "parlions", "que vous": "parliez", "qu'ils/elles": "parlent" },
+    "subjonctif imparfait": { "que je": "parlasse", "que tu": "parlasses", "qu'il/elle": "parlât", "que nous": "parlâmes", "que vous": "parlâtes", "qu'ils/elles": "parlèrent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse parlé", "que tu": "eusses parlé", "qu'il/elle": "eût parlé", "que nous": "eussions parlé", "que vous": "eussiez parlé", "qu'ils/elles": "eussent parlé" },
+    "conditionnel présent": { "je": "parlerais", "tu": "parlerais", "il/elle": "parlrait", "nous": "parlerions", "vous": "parlriez", "ils/elles": "parlraient" },
+    "conditionnel passé": { "j'": "aurais parlé", "tu": "aurais parlé", "il/elle": "aurait parlé", "nous": "aurions parlé", "vous": "auriez parlé", "ils/elles": "auraient parlé" },
+    "impératif présent": { "parle": "parle", "parlons": "parlons", "parlez": "parlez" },
+    "impératif passé": { "aie parlé": "aie parlé", "ayons parlé": "ayons parlé", "avez parlé": "avez parlé" }
   }
 };
 
-export const faire: Verb = {
-  name: "faire",
+export const venir: Verb = {
+  name: "venir",
   conjugations: {
-    "présent": { "je": "fais", "tu": " fais", "il/elle": "fait", "nous": "faisons", "vous": "faites", "ils/elles": "font" },
-    "imparfait": { "je": "faisais", "tu": "faisais", "il/elle": "faisait", "nous": "faisions", "vous": "faisiez", "ils/elles": "faisaient" },
-    "futur": { "je": "ferai", "tu": "feras", "il/elle": "fera", "nous": "ferons", "vous": "ferez", "ils/elles": "feront" },
-    "passé composé": { "j'": "ai fait", "tu": "as fait", "il/elle": "a fait", "nous": "avons fait", "vous": "avez fait", "ils/elles": "ont fait" },
-    "plus-que-parfait": { "j'": "avais fait", "tu": "avais fait", "il/elle": "avait fait", "nous": "avions fait", "vous": "aviez fait", "ils/elles": "avaient fait" },
-    "passé simple": { "je": "fis", "tu": "fis", "il/elle": "fit", "nous": "fîmes", "vous": "fîtes", "ils/elles": "firent" },
-    "passé antérieur": { "j'": "eus fait", "tu": "eus fait", "il/elle": "eut fait", "nous": "eûmes fait", "vous": "eûtes fait", "ils/elles": "eurent fait" },
-    "futur antérieur": { "j'": "aurai fait", "tu": "auras fait", "il/elle": "aura fait", "nous": "aurons fait", "vous": "aurez fait", "ils/elles": "auront fait" },
-    "subjonctif présent": { "que je": "fasse", "que tu": "fasses", "qu'il/elle": "fasse", "que nous": "fassions", "que vous": "fassiez", "qu'ils/elles": "fassent" },
-    "subjonctif imparfait": { "que je": " fisse", "que tu": " fisses", "qu'il/elle": " fitte", "que nous": " fissions", "que vous": " fissiez", "qu'ils/elles": " fissent" },
-    "subjonctif plus-que-parfait": { "que j'": "eusse fait", "que tu": "eusses fait", "qu'il/elle": "eût fait", "que nous": "eussions fait", "que vous": "eussiez fait", "qu'ils/elles": "eussent fait" },
-    "conditionnel présent": { "je": "ferais", "tu": "ferais", "il/elle": "ferait", "nous": "ferions", "vous": "feriez", "ils/elles": "feraient" },
-    "conditionnel passé": { "j'": "aurais fait", "tu": "aurais fait", "il/elle": "aurait fait", "nous": "aurions fait", "vous": "auriez fait", "ils/elles": "auraient fait" },
-    "impératif présent": { "fais": "fais", "faisons": "faisons", "faites": "faites" },
-    "impératif passé": { "aie fait": "aie fait", "ayons fait": "ayons fait", "avez fait": "avez fait" }
-  }
-};
-
-export const voir: Verb = {
-  name: "voir",
-  conjugations: {
-    "présent": { "je": "vois", "tu": "vois", "il/elle": "voit", "nous": "voyons", "vous": "voyez", "ils/elles": "voient" },
-    "imparfait": { "je": "voyais", "tu": "voyais", "il/elle": "voyait", "nous": "voyions", "vous": "voyiez", "ils/elles": "voyaient" },
-    "futur": { "je": "verrai", "tu": "verras", "il/elle": "verra", "nous": "verrons", "vous": "verrez", "ils/elles": "verront" },
-    "passé composé": { "j'": "ai vu", "tu": "as vu", "il/elle": "a vu", "nous": "avons vu", "vous": "avez vu", "ils/elles": "ont vu" },
-    "plus-que-parfait": { "j'": "avais vu", "tu": "avais vu", "il/elle": "avait vu", "nous": "avions vu", "vous": "aviez vu", "ils/elles": "avaient vu" },
-    "passé simple": { "je": "vis", "tu": "vis", "il/elle": "vit", "nous": "vîmes", "vous": "vîtes", "ils/elles": "virent" },
-    "passé antérieur": { "j'": "eus vu", "tu": "eus vu", "il/elle": "eut vu", "nous": "eûmes vu", "vous": "eûtes vu", "ils/elles": "eurent vu" },
-    "futur antérieur": { "j'": "aurai vu", "tu": "auras vu", "il/elle": "aura vu", "nous": "aurons vu", "vous": "aurez vu", "ils/elles": "auront vu" },
-    "subjonctif présent": { "que je": "voie", "que tu": "voies", "qu'il/elle": "voie", "que nous": "voyions", "que vous": "voyiez", "qu'ils/elles": "voient" },
+    "présent": { "je": "viens", "tu": "viens", "il/elle": "vient", "nous": "venons", "vous": "venez", "ils/elles": "viennent" },
+    "imparfait": { "je": "venais", "tu": "venais", "il/elle": "venait", "nous": "venions", "vous": "veniez", "ils/elles": "venaient" },
+    "futur": { "je": "viendrai", "tu": "viendras", "il/elle": "viendra", "nous": "viendrons", "vous": "viendrez", "ils/elles": "viendront" },
+    "passé composé": { "j'": "suis venu(e)", "tu": "es venu(e)", "il/elle": "est venu(e)", "nous": "sommes venu(e)s", "vous": "êtes venu(e)s", "ils/elles": "sont venu(e)s" },
+    "plus-que-parfait": { "j'": "étais venu(e)", "tu": "étais venu(e)", "il/elle": "était venu(e)", "nous": "étions venu(e)s", "vous": "étiez venu(e)s", "ils/elles": "étaient venu(e)s" },
+    "passé simple": { "je": "vins", "tu": "vins", "il/elle": "vint", "nous": "vîmes", "vous": "vîtes", "ils/elles": "vinrent" },
+    "passé antérieur": { "j'": "eus venu(e)", "tu": "eus venu(e)", "il/elle": "eut venu(e)", "nous": "eûmes venu(e)s", "vous": "eûtes venu(e)s", "ils/elles": "eurent venu(e)s" },
+    "futur antérieur": { "j'": "aurai venu(e)", "tu": "auras venu(e)", "il/elle": "aura venu(e)", "nous": "aurons venu(e)s", "vous": "aurez venu(e)s", "ils/elles": "auront venu(e)s" },
+    "subjonctif présent": { "que je": "vienne", "que tu": "viennes", "qu'il/elle": "vienne", "que nous": "venions", "que vous": "veniez", "qu'ils/elles": "viennent" },
     "subjonctif imparfait": { "que je": "vinsse", "que tu": "vinsses", "qu'il/elle": "vît", "que nous": "vinssions", "que vous": "vinssiez", "qu'ils/elles": "vinssent" },
-    "subjonctif plus-que-parfait": { "que j'": "eusse vu", "que tu": "eusses vu", "qu'il/elle": "eût vu", "que nous": "eussions vu", "que vous": "eussiez vu", "qu'ils/elles": "eussent vu" },
-    "conditionnel présent": { "je": "verrais", "tu": "verrais", "il/elle": "verrait", "nous": "verrions", "vous": "verriez", "ils/elles": "verraient" },
-    "conditionnel passé": { "j'": "aurais vu", "tu": "aurais vu", "il/elle": "aurait vu", "nous": "aurions vu", "vous": "auriez vu", "ils/elles": "auraient vu" },
-    "impératif présent": { "voie": "voie", "voyons": "voyons", "voyez": "voyez" },
-    "impératif passé": { "aie vu": "aie vu", "ayons vu": "ayons vu", "avez vu": "avez vu" }
+    "subjonctif plus-que-parfait": { "que j'": "eusse venu(e)", "que tu": "eusses venu(e)", "qu'il/elle": "eût venu(e)", "que nous": "eussions venu(e)s", "que vous": "eussiez venu(e)s", "qu'ils/elles": "eussent venu(e)s" },
+    "conditionnel présent": { "je": "viendrais", "tu": "viendrais", "il/elle": "viendrait", "nous": "viendrions", "vous": "viendriez", "ils/elles": "viendraient" },
+    "conditionnel passé": { "j'": "aurais venu(e)", "tu": "aurais venu(e)", "il/elle": "aurait venu(e)", "nous": "aurions venu(e)s", "vous": "auriez venu(e)s", "ils/elles": "auraient venu(e)s" },
+    "impératif présent": { "viens": "viens", "venons": "venons", "venez": "venez" },
+    "impératif passé": { "aie venu": "aie venu", "ayons venu": "ayons venu", "avez venu": "avez venu" }
   }
 };
 
-export const mettre: Verb = {
-  name: "mettre",
+export const pouvoir: Verb = {
+  name: "pouvoir",
   conjugations: {
-    "présent": { "je": "mets", "tu": "mets", "il/elle": "met", "nous": "mettons", "vous": "mettez", "ils/elles": "mettent" },
-    "imparfait": { "je": "mettais", "tu": "mettais", "il/elle": "mettait", "nous": "mettions", "vous": "mettiez", "ils/elles": "mettaient" },
-    "futur": { "je": "mettrai", "tu": "mettras", "il/elle": "mettra", "nous": "mettrons", "vous": "mettrez", "ils/elles": "mettront" },
-    "passé composé": { "j'": "ai mis", "tu": "as mis", "il/elle": "a mis", "nous": "avons mis", "vous": "avez mis", "ils/elles": "ont mis" },
-    "plus-que-parfait": { "j'": "avais mis", "tu": "avais mis", "il/elle": "avait mis", "nous": "avions mis", "vous": "aviez mis", "ils/elles": "avaient mis" },
-    "passé simple": { "je": "mis", "tu": "mis", "il/elle": "mit", "nous": "mîmes", "vous": "mîtes", "ils/elles": "mirent" },
-    "passé antérieur": { "j'": "eus mis", "tu": "eus mis", "il/elle": "eut mis", "nous": "eûmes mis", "vous": "eûtes mis", "ils/elles": "eurent mis" },
-    "futur antérieur": { "j'": "aurai mis", "tu": "auras mis", "il/elle": "aura mis", "nous": "aurons mis", "vous": "aurez mis", "ils/elles": "auront mis" },
-    "subjonctif présent": { "que je": "mette", "que tu": "mettes", "qu'il/elle": "mette", "que nous": "mettions", "que vous": "mettiez", "qu'ils/elles": "mettent" },
-    "subjonctif imparfait": { "que je": "misse", "que tu": "misses", "qu'il/elle": "mitte", "que nous": "missions", "que vous": "missez", "qu'ils/elles": "mettent" },
-    "subjonctif plus-que-parfait": { "que j'": "eusse mis", "que tu": "eusses mis", "qu'il/elle": "eût mis", "que nous": "eussions mis", "que vous": "eussiez mis", "qu'ils/elles": "eussent mis" },
-    "conditionnel présent": { "je": "mettrais", "tu": "mettrais", "il/elle": "mettrait", "nous": "mettrions", "vous": "mettriez", "ils/elles": "mettraient" },
-    "conditionnel passé": { "j'": "aurais mis", "tu": "aurais mis", "il/elle": "aurait mis", "nous": "aurions mis", "vous": "auriez mis", "ils/elles": "auraient mis" },
-    "impératif présent": { "mets": "mets", "mettons": "mettons", "mettez": "mettez" },
-    "impératif passé": { "aie mis": "aie mis", "ayons mis": "ayons mis", "avez mis": "avez mis" }
+    "présent": { "je": "peux", "tu": "peux", "il/elle": "peut", "nous": "pouvons", "vous": "pouvez", "ils/elles": "peuvent" },
+    "imparfait": { "je": "pouvais", "tu": "pouvais", "il/elle": "pouvait", "nous": "pouvions", "vous": "pouviez", "ils/elles": "pouvaient" },
+    "futur": { "je": "pourrai", "tu": "pourras", "il/elle": "pourra", "nous": "pourrons", "vous": "pourrez", "ils/elles": "pourront" },
+    "passé composé": { "j'": "ai pu", "tu": "as pu", "il/elle": "a pu", "nous": "avons pu", "vous": "avez pu", "ils/elles": "ont pu" },
+    "plus-que-parfait": { "j'": "avais pu", "tu": "avais pu", "il/elle": "avait pu", "nous": "avions pu", "vous": "aviez pu", "ils/elles": "avaient pu" },
+    "passé simple": { "je": "pus", "tu": "pus", "il/elle": "put", "nous": "pûmes", "vous": "pûtes", "ils/elles": "purent" },
+    "passé antérieur": { "j'": "eus pu", "tu": "eus pu", "il/elle": "eut pu", "nous": "eûmes pu", "vous": "eûtes pu", "ils/elles": "eurent pu" },
+    "futur antérieur": { "j'": "aurai pu", "tu": "auras pu", "il/elle": "aura pu", "nous": "aurons pu", "vous": "aurez pu", "ils/elles": "auront pu" },
+    "subjonctif présent": { "que je": "puisse", "que tu": "puisses", "qu'il/elle": "puisse", "que nous": "puissions", "que vous": "puissiez", "qu'ils/elles": "puissent" },
+    "subjonctif imparfait": { "que je": "pusse", "que tu": "pusses", "qu'il/elle": "pût", "que nous": "pussions", "que vous": "pussiez", "qu'ils/elles": "pussent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse pu", "que tu": "eusses pu", "qu'il/elle": "eût pu", "que nous": "eussions pu", "que vous": "eussiez pu", "qu'ils/elles": "eussent pu" },
+    "conditionnel présent": { "je": "pourrais", "tu": "pourrais", "il/elle": "pourrait", "nous": "pourrions", "vous": "pourriez", "ils/elles": "pourraient" },
+    "conditionnel passé": { "j'": "aurais pu", "tu": "aurais pu", "il/elle": "aurait pu", "nous": "aurions pu", "vous": "auriez pu", "ils/elles": "auraient pu" },
+    "impératif présent": { "puisse": "puisse", "puissions": "puissions", "puissiez": "puissiez" },
+    "impératif passé": { "aie pu": "aie pu", "ayons pu": "ayons pu", "avez pu": "avez pu" }
   }
 };
 
-export const tenir: Verb = {
-  name: "tenir",
+export const vouloir: Verb = {
+  name: "vouloir",
   conjugations: {
-    "présent": { "je": "tiens", "tu": "tiens", "il/elle": "tient", "nous": "tenons", "vous": "tenez", "ils/elles": "tiennent" },
-    "imparfait": { "je": "tenais", "tu": "tenais", "il/elle": "tenait", "nous": "tenions", "vous": "teniez", "ils/elles": "tenaient" },
-    "futur": { "je": "tiendrai", "tu": "tiendras", "il/elle": "tiendra", "nous": "tiendrons", "vous": "tiendrez", "ils/elles": "tiendront" },
-    "passé composé": { "j'": "ai tenu", "tu": "as tenu", "il/elle": "a tenu", "nous": "avons tenu", "vous": "avez tenu", "ils/elles": "ont tenu" },
-    "plus-que-parfait": { "j'": "avais tenu", "tu": "avais tenu", "il/elle": "avait tenu", "nous": "avions tenu", "vous": "aviez tenu", "ils/elles": "avaient tenu" },
-    "passé simple": { "je": "tins", "tu": "tins", "il/elle": " tint", "nous": "tinmes", "vous": "tinmes", "ils/elles": "tinrent" },
-    "passé antérieur": { "j'": "eus tenu", "tu": "eus tenu", "il/elle": "eut tenu", "nous": "eûmes tenu", "vous": "eûtes tenu", "ils/elles": "eurent tenu" },
-    "futur antérieur": { "j'": "aurai tenu", "tu": "auras tenu", "il/elle": "aura tenu", "nous": "aurons tenu", "vous": "aurez tenu", "ils/elles": "auront tenu" },
-    "subjonctif présent": { "que je": "tienne", "que tu": "tiennes", "qu'il/elle": "tienne", "que nous": "tenions", "que vous": "teniez", "qu'ils/elles": "tiennent" },
-    "subjonctif imparfait": { "que je": "tinsse", "que tu": "tinses", "qu'il/elle": " tint", "que nous": "tissions", "que vous": "tissiez", "qu'ils/elles": "tissent" },
-    "subjonctif plus-que-parfait": { "que j'": "eusse tenu", "que tu": "eusses tenu", "qu'il/elle": "eût tenu", "que nous": "eussions tenu", "que vous": "eussiez tenu", "qu'ils/elles": "eussent tenu" },
-    "conditionnel présent": { "je": "tiendrais", "tu": "tiendrais", "il/elle": "tiendrait", "nous": "tiendrions", "vous": "tiendriez", "ils/elles": "tiendraient" },
-    "conditionnel passé": { "j'": "aurais tenu", "tu": "aurais tenu", "il/elle": "aurait tenu", "nous": "aurions tenu", "vous": "auriez tenu", "ils/elles": "auraient tenu" },
-    "impératif présent": { "tien": "tien", "tenons": "tenons", "tenez": "tenez" },
-    "impératif passé": { "aie tenu": "aie tenu", "ayons tenu": "ayons tenu", "avez tenu": "avez tenu" }
+    "présent": { "je": "veux", "tu": "veux", "il/elle": "veut", "nous": "voulons", "vous": "voulez", "ils/elles": "veulent" },
+    "imparfait": { "je": "voulais", "tu": "voulais", "il/elle": "voulait", "nous": "voulions", "vous": "vouliez", "ils/elles": "voulaient" },
+    "futur": { "je": "voudrai", "tu": "voudras", "il/elle": "voudra", "nous": "voudrons", "vous": "voudrez", "ils/elles": "voudront" },
+    "passé composé": { "j'": "ai voulu", "tu": "as voulu", "il/elle": "a voulu", "nous": "avons voulu", "vous": "avez voulu", "ils/elles": "ont voulu" },
+    "plus-que-parfait": { "j'": "avais voulu", "tu": "avais voulu", "il/elle": "avait voulu", "nous": "avions voulu", "vous": "aviez voulu", "ils/elles": "avaient voulu" },
+    "passé simple": { "je": "voulus", "tu": "voulus", "il/elle": "voulut", "nous": "voulûmes", "vous": "voulûtes", "ils/elles": "voulurent" },
+    "passé antérieur": { "j'": "eus voulu", "tu": "eus voulu", "il/elle": "eut voulu", "nous": "eûmes voulu", "vous": "eûtes voulu", "ils/elles": "eurent voulu" },
+    "futur antérieur": { "j'": "aurai voulu", "tu": "auras voulu", "il/elle": "aura voulu", "nous": "aurons voulu", "vous": "aurez voulu", "ils/elles": "auront voulu" },
+    "subjonctif présent": { "que je": "veuille", "que tu": "veuilles", "qu'il/elle": "veuille", "que nous": "voulions", "que vous": "vouliez", "qu'ils/elles": "veuillent" },
+    "subjonctif imparfait": { "que je": "voulusse", "que tu": "voulusses", "qu'il/elle": "voulût", "que nous": "voulussions", "que vous": "voulussiez", "qu'ils/elles": "voulussent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse voulu", "que tu": "eusses voulu", "qu'il/elle": "eût voulu", "que nous": "eussions voulu", "que vous": "eussiez voulu", "qu'ils/elles": "eussent voulu" },
+    "conditionnel présent": { "je": "voudrais", "tu": "voudrais", "il/elle": "voudrait", "nous": "voudrions", "vous": "voudriez", "ils/elles": "voudraient" },
+    "conditionnel passé": { "j'": "aurais voulu", "tu": "aurais voulu", "il/elle": "aurait voulu", "nous": "aurions voulu", "vous": "auriez voulu", "ils/elles": "auraient voulu" },
+    "impératif présent": { "veuille": "veuille", "veuillons": "veuillons", "veuillez": "veuillez" },
+    "impératif passé": { "aie voulu": "aie voulu", "ayons voulu": "ayons voulu", "avez voulu": "avez voulu" }
+  }
+};
+
+export const savoir: Verb = {
+  name: "savoir",
+  conjugations: {
+    "présent": { "je": "sais", "tu": "sais", "il/elle": "sait", "nous": "savons", "vous": "savez", "ils/elles": "savent" },
+    "imparfait": { "je": "savais", "tu": "savais", "il/elle": "savait", "nous": "savions", "vous": "saviez", "ils/elles": "savaient" },
+    "futur": { "je": "saurai", "tu": "sauras", "il/elle": "saura", "nous": "saurons", "vous": "saurez", "ils/elles": "sauront" },
+    "passé composé": { "j'": "ai su", "tu": "as su", "il/elle": "a su", "nous": "avons su", "vous": "avez su", "ils/elles": "ont su" },
+    "plus-que-parfait": { "j'": "avais su", "tu": "avais su", "il/elle": "avait su", "nous": "avions su", "vous": "aviez su", "ils/elles": "avaient su" },
+    "passé simple": { "je": "sus", "tu": "sus", "il/elle": "sut", "nous": "sûmes", "vous": "sûtes", "ils/elles": "surent" },
+    "passé antérieur": { "j'": "eus su", "tu": "eus su", "il/elle": "eut su", "nous": "eûmes su", "vous": "eûtes su", "ils/elles": "eurent su" },
+    "futur antérieur": { "j'": "aurai su", "tu": "auras su", "il/elle": "aura su", "nous": "aurons su", "vous": "aurez su", "ils/elles": "auront su" },
+    "subjonctif présent": { "que je": "sache", "que tu": "saches", "qu'il/elle": "sache", "que nous": "sachions", "que vous": "sachiez", "qu'ils/elles": "sachent" },
+    "subjonctif imparfait": { "que je": "susse", "que tu": "susses", "qu'il/elle": "sût", "que nous": "sussions", "que vous": "sussiez", "qu'ils/elles": "sussent" },
+    "subjonctif plus-que-parfait": { "que j'": "eusse su", "que tu": "eusses su", "qu'il/elle": "eût su", "que nous": "eussions su", "que vous": "eussiez su", "qu'ils/elles": "eussent su" },
+    "conditionnel présent": { "je": "saurais", "tu": "saurais", "il/elle": "saurait", "nous": "saurions", "vous": "sauriez", "ils/elles": "sauraient" },
+    "conditionnel passé": { "j'": "aurais su", "tu": "aurais su", "il/elle": "aurait su", "nous": "aurions su", "vous": "auriez su", "ils/elles": "auraient su" },
+    "impératif présent": { "sache": "sache", "sachons": "sachons", "sachez": "sachez" },
+    "impératif passé": { "aie su": "aie su", "ayons su": "ayons su", "avez su": "avez su" }
   }
 };
 
@@ -110,5 +110,10 @@ export default {
   faire,
   voir,
   mettre,
-  tenir
+  tenir,
+  parler,
+  venir,
+  pouvoir,
+  vouloir,
+  savoir
 };
